@@ -1,0 +1,38 @@
+% Encoding: UTF-8
+
+@Article{gps_performances,
+  author  = {GMV},
+  title   = {GPS Performances},
+  journal = {gssc.essa.int},
+  year    = {2011},
+}
+
+@Article{gps_water,
+  author  = {Robinson Meyer},
+  title   = {GPS Doesn't Work Underwater},
+  journal = {theatlantic.com},
+  year    = {2016},
+}
+
+@Article{avalanche_performance,
+  author  = {Jürg Schweizer, Georges Krüsi},
+  title   = {Testing the performance of avalanche transceivers},
+  journal = {Elsevier},
+  year    = {2003},
+}
+
+@Article{a_gps_vs_gps,
+  author  = {Nikhilesh Jasuja, Poonam S., Kate T., Pooja Sehgal},
+  title   = {{A-GPS} vs {GPS}},
+  journal = {diffen.com},
+  year    = {2019},
+}
+
+@Article{plastic_corrosion,
+  author  = {Kendrick Pangman},
+  title   = {{D}oes {P}lastic {C}orrode?},
+  journal = {sciencing.com},
+  year    = {2017},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

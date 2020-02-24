@@ -45,11 +45,4 @@
   date        = {2008-09-01},
 }
 
-@WWW{flepos,
-  author = {overheid vlaanderen},
-  editor = {overheid vlaanderen},
-  title  = {Centimeternauwkeurige positiebepaling (FLEPOS)},
-  url    = {https://overheid.vlaanderen.be/informatie-vlaanderen/producten-diensten/centimeternauwkeurige-positiebepaling-flepos},
-}
-
 @Comment{jabref-meta: databaseType:biblatex;}

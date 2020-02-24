@@ -3,49 +3,59 @@
 \section{Introductie} % The \section*{} command stops section numbering
 \label{sec:introductie}
 
-Hier introduceer je werk. Je hoeft hier nog niet te technisch te gaan.
+Een van de meest verspreide ICT-toepassingen als gevolg van de recente technologische revolutie is het Global Positioning System (GPS). Met GPS wordt er impliciet verwezen naar de Standard Positioning Service (SPS). De SPS is een positionerings- en timingdienst die wordt aangeboden door middel van variërende signalen die worden uitgezonden op de GPS L1 frequentie \autocite{gps_def}.  Deze technologische toepassing heeft verregaande gevolgen gehad inzake de manier waarop onze samenleving georganiseerd wordt. Mensen gebruiken de GPS om files te ontwijken op weg naar hun werk en om niet te verdwalen op reis, maar GPS systemen kunnen ook  gebruikt worden voor water- en wintersporten. Praktische voorbeelden hiervan zijn lawinepiepers. Een lawinepieper is een radiozender en -ontvanger die wordt gebruikt om mensen op te sporen die onder een lawine zijn geraakt \autocite{avalanche_performance}. 
 
-Je beschrijft zeker:
+Lawinepiepers zijn vaak niet goedkoop en er bestaan weinig goedkope alternatieven die dezelfde kwaliteit behouden. Lawinepiepers zijn te verkrijgen vanaf ongeveer 200 euro. Tussen de verschillende merken van deze lawinepiepers heerst er een groot verschil aan kwaliteit en prijs. In deze bachelorproef wordt er nagegaan of het mogelijk is om een product te ontwikkelen dat even kwalitatief werkt als professionele toestellen die momenteel gebruikt kunnen worden in ongunstige omstandigheden zoals bij het uitoefenen van water- en wintersporten, maar dan goedkoper.
 
-\begin{itemize}
-  \item de probleemstelling en context
-  \item de motivatie en relevantie voor het onderzoek
-  \item de doelstelling en onderzoeksvraag/-vragen
-\end{itemize}
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{State-of-the-art}
 \label{sec:state-of-the-art}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein. Dit kan bijvoorbeeld een literatuurstudie zijn. Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek? Wat is de relevantie met jouw onderzoek?
-
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Doll1954}! Denk zeker goed na welke werken je refereert en waarom.
-
-% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
-% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
-%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
-%   ...'')
-
-Je mag gerust gebruik maken van subsecties in dit onderdeel.
+Volgens \textcite{avalanche_performance} is het niet vanzelfsprekend om iemand te vinden met behulp van lawinepiepers. Het vinden van de beacon hangt sterk af van welk merk er gebruikt wordt. Uit het onderzoek van \textcite{avalanche_performance} blijkt dat er een significant verschil is in de kwaliteit van de toestellen en in de tijd waarin het duurt om iemand terug te vinden. Het tijdsbestek waarin fictieve lawineslachtoffers teruggevonden werden, varieert tussen 109,5 seconden en 215 seconden. In beide gevallen werd de mediaan gebruikt voor het bepalen van het tijdsbestek per model.
+De kwaliteit van deze toestellen kan afhangen van welke GPS-service ze gebruik maken. Zo is er de Standard Positioning Service (SPS), die als minder nauwkeurig beschouwd wordt, en de Precise Positioning Service (PPS). De SPS-service is vrij te gebruiken door particulieren en bedrijven, terwijl de PPS-service een autorisatie vereist die in de praktijk alleen te gebruiken valt voor militaire toepassingen. \autocite{gps_performances} Lawinepiepers zijn niet geautoriseerd om PPS te kunnen gebruiken, waardoor we deze GPS-service level uitsluiten in dit onderzoek. 
+Naast de twee GPS-service levels (SPS en PPS) bestaan er ook alternatieve manieren om locaties te bepalen. We hebben het traditionele Global Positioning System (GPS), dat gebruikt maakt van satellieten, maar ook Assisted Global Positioning Systems (A-GPS), die daarnaast ook gebruik maakt van masten voor mobiele telefoons. \autocite{a_gps_vs_gps} Een andere mogelijkheid is het gebruik van De Flemish Positioning Service.
+In deze bachelorproef wordt er een proof of concept (PoC) opgeleverd die gebruik zal maken van de besproken technologieën. Deze PoC zal bestaan uit een Rasberry Pi 3 (RP3), aangezien deze voldoet aan de volgende vereisten: low-cost, mogelijkheid tot gebruik van GPS en mogelijkheid tot waterdichte casing. Voor waterdichtheid en bescherming van de RP3 zal er gebruik gemaakt worden van een plastic omhulsel,  aangezien deze meer resistent zijn in ongunstige omstandigheden dan metaal \autocite{plastic_corrosion}.
+Bij dit onderzoek kan de volgende hypothese opgesteld worden en proberen we de nulhypothese te verwerpen:
+H1: Het is mogelijk om een low-cost GPS-systeem te ontwikkelen die bijna even kwalitatief is als een bestaand professioneel toestel die overleeft in ongunstige omstandigheden (water/sneeuw/zout).
+H0: Het is niet mogelijk om een low-cost GPS-systeem te ontwikkelen die een gelijkaardige kwaliteit bevat als een bestaand professioneel toestel dat overleeft in ongunstige omstandigheden (water/sneeuw/zout).
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor experimenten, vragenlijsten, simulaties? Je beschrijft ook al welke tools je denkt hiervoor te gebruiken of te ontwikkelen.
+Er zullen experimenten/simulaties uitgevoerd worden waarbij de PoC gemonitord en vergeleken wordt met reeds bestaande toestellen. Hiervoor zullen er field tests uitgevoerd worden.  Na de field tests wordt er bekeken hoe de PoC verbeterd kan worden om de kwaliteit van de reeds bestaande toestellen te evenaren en tegelijkertijd een low-cost device te blijven. 
+Zo willen we de maximale diepte bepalen waarop de PoC een GPS-signaal blijft sturen, en dit zowel in water als in sneeuw. Ook de mate waarin de locatiebepaling accuraat is, wordt onder de loep genomen. 
+Volgens \autocite{gps_water} zouden GPS-signalen zich niet goed kunnen verplaatsen in water. Vreemd genoeg claimt het merk divenetgps een diepte te bereiken van 300m. Voor de wetenschappelijke relevantie wordt getest hoe diep een GPS-systeem blijft functioneren naar behoren onder water. Indien dit mogelijk is, kunnen er toepassingen uitgewerkt worden binnen watersporten, zoals het terugvinden van een surfbord.
+Om uit te schijnen tussen bestaande toestellen zal de gebruiksvriendelijkheid ook verbetert worden door middel van een applicatie die het ‘tracken’ van iets of iemand zeer eenvoudig maakt.
+
 
 %---------- Verwachte resultaten ----------------------------------------------
+
 \section{Verwachte resultaten}
 \label{sec:verwachte_resultaten}
-
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de stukken van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet hoe je je data gaat moeten structureren.
-
+Voor de volgende grafieken geldt: (Deze grafieken zijn fictief, ze zijn slechts een verwachting)
+\newline
+PD = Professional Device, bestaand product op de markt
+\newline
+PoC = zelf ontwikkelde Proof of Concept
+\clearpage
+Verwachte resultaten van field tests in ongunstige omstandigheden (sneeuw):
+\newline
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{snowAccuracy}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{snowDepth}
+\clearpage
+Verwachte resultaten van field tests in ongunstige omstandigheden (water):
+\newline
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{waterAccuracy}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{waterDepth}
+\clearpage
 %---------- Verwachte conclusies ----------------------------------------------
 \section{Verwachte conclusies}
 \label{sec:verwachte_conclusies}
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+Uit dit onderzoek moet duidelijk blijken of het mogelijk is een low-cost GPS-systeem te ontwikkelen dat niet onderdoet voor de bestaande producten. De PoC zal relatief goede resultaten behalen ten opzichte van de producten die al op de markt zijn. 
+Hopelijk vloeit uit dit onderzoek een PoC voort die klaar is voor de consument die opzoek is naar een GPS-systeem van vergelijkbare kwaliteit die gebruikt kan worden voor doeleinden zoals het vinden van een verloren surfbord tot het terugvinden van lawineslachtoffers.
+
 

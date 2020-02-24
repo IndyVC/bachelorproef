@@ -41,13 +41,4 @@
   date        = {2014-12-16},
 }
 
-@Article{underwaterProblem,
-  author       = {Gunnar Taraldsen, Tor Arne Reinen, Tone Berg},
-  title        = {The underwater GPS problem},
-  journal      = {https://www.semanticscholar.org/paper/The-underwater-GPS-problem-Taraldsen-Reinen/37ff01bbf3d70b2b21c4ef6b28baca6253eb751c},
-  journaltitle = {The underwater GPS problem},
-  year         = {2011},
-  date         = {2011-09-11},
-}
-
 @Comment{jabref-meta: databaseType:biblatex;}

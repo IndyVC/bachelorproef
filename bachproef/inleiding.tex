@@ -4,33 +4,44 @@
 
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}
 \label{ch:inleiding}
+Een van de meest verspreide ICT-toepassingen als gevolg van de technologische revolutie is het Global Positioning System (gps). Dit systeem kan gebruikt worden door verschillende toestellen voor verschillende doeleinden. Een voorbeeld hiervan is een route uitstippelen met behulp van je gsm. Naar schatting zouden er 3.5 miljard mensen een gsm bezitten, wat het gebruik van het Global Positioning System zeer toegankelijk maakt. \autocite{numberOfSmartphones} Er bestaan verschillende toestellen met elk hun eigen toepassing. Een voorbeeld hiervan is de lawinepieper. Dit toestel wordt gebruikt om mensen op te sporen die bedolven zijn onder een lawine. Wat uniek is aan dit toestel is dat ze werken op een aparte frequentie (457 kHz), maar voor een lawinepieper betaal je al rap ongeveer 200 euro. \autocite{avalancheTransceivers}
+Een andere toepassing zou kunnen zijn: het opsporen van verloren goederen onder of in water. Helaas is dit een hele uitdaging doordat
+het gps signaal niet optimaal werkt onder water. \autocite{underwaterProblem} Dit komt doordat de elektromagnetische signalen van de satellieten het water niet of amper kunnen penetreren. Ook kosten dergelijke toestellen met een goede gps relatief veel geld, wat het niet toegankelijk maakt voor een winter- of watersporter. 
+Een andere factor waarmee rekening gehouden moet worden bij het aankopen van een gps zijn ongunstige omstandigheden. Bijvoorbeeld zout zorgt voor corrosie en water of sneeuw zorgt ervoor dat een gps waterdicht moet zijn.  
+In het kader van dit onderzoek werd er een proof of concept (PoC) gecreëerd die gebruikt kan worden om iets of iemand op te sporen, waterdicht is, goedkoop en werd er ook een applicatie ontwikkeld om de tracker op te volgen.
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
-
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's,'' systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+Gps toestellen kunnen duur oplopen. Als je kijkt naar een lawinepieper betaal je al rap boven de 200 euro. Ook zijn deze toestellen moeilijk te configureren of te gebruiken. Een ander probleem is dat voor watersporters er niks toegankelijk bestaat om bijvoorbeeld hun surfbord terug te vinden wanneer ze dit verliezen onder water. Dit onderzoek focust zich op winter- en watersporters die nood hebben aan een betrouwbaar, goedkoop, waterdicht en makkelijk te gebruiken gps toestellen.
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}
+\subsection{\IfLanguageName{dutch}{Hoofdonderzoeksvraag}{Main research question}}
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+Zoals reeds aangegeven zal dit onderzoek zich vooral focussen op het opleveren van een goedkoop gps toestel dat goed presteert in ongunstige omstandigheden. Hieruit volgt dan de volgende hoofdonderzoeksvraag.
+\newline
+\begin{itemize}
+	\item Is het mogelijk on een goedkoop gps tracking toestel te ontwikkelen die niet bezwijkt onder ongunstige omstandigheden?
+\end{itemize}
+
+\subsection{\IfLanguageName{dutch}{Deelonderzoeksvragen}{Sub-research question}}
+Als resultaat van dit onderzoek moet er een proof of concept (PoC) opgeleverd worden die voldoet aan de volgende vereisten:
+\begin{itemize}
+	\item Proof of concept moet in staat zijn om zijn locatie te delen.
+	\item Proof of concept moet goedkoop zijn.
+	\item Proof of concept moet resistant zijn tegen zout.
+	\item Proof of concept moet resistant zijn tegen water. 
+	\item Proof of concept moet minstens even accuraat werken als een ingebouwde gps in een gsm.
+	\item Proof of concept moet getracked kunnen worden met behulp van een applicatie
+	\item Applicatie moet gebruiksvriendelijk zijn
+\end{itemize}
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}
 \label{sec:onderzoeksdoelstelling}
+Het hoofddoel is een proof of concept opleveren die toegankelijk is voor water- en wintersporters die nood hebben aan een gps systeem dat goed blijft functioneren in ongunstige omstandigheden. Dit onderzoek is dan ook geslaagd wanneer dit hoofddoel behaald wordt.
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}
 \label{sec:opzet-bachelorproef}
@@ -47,4 +58,6 @@ In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de
 
 % TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
 
-In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+In Hoofdstuk~\ref{ch:corpus} vindt u het volledig bekomen resultaat (proof of concept met bijhorende applicatie)
+.
+In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen.

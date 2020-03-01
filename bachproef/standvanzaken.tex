@@ -74,7 +74,8 @@ Er zijn verschillen tussen tussen deze Global Navigation Satellite Systems, name
 \end{table}
 \newline
 De reden voor het bestaan van deze verschillende systemen is van politieke aard. Zo wou de Europese Unie en Rusland onafhankelijk worden van Amerika (NAVSTAR). 
-\section{Verschillende GPS-technologieën}
+
+\section{Verschillende Locatiebepaling-technologieën}
 \subsection{\IfLanguageName{dutch}{Standard Positioning Service (SPS)}{Standard Positioning Service (SPS)}}
 De 'Standard Positioning Service' (SPS) is een positionerings- en timingdienst die signalen broadcast op de GPS L1 frequentie. Deze frequentie, die gebruikt wordt door alle NAVSTAR GPS-satellieten, zorgt ervoor dat GPS vrij te gebruiken is voor iedereen. \autocite{gps}
 \newline
@@ -115,23 +116,79 @@ Zoals je kan merken is de accuraatheid minder goed dan het zelf bepalen van de l
 \subsection{\IfLanguageName{dutch}{Advanced Mobile Location (AML)}{Advanced Mobile Location (AML)}}
 Tot nu toe was er nog geen enkele techniek die de exacte locatie kon bepalen. 'Advanced Mobile Location' (AML) is de nieuwste (opensource) techniek die hiervoor een oplossing biedt. Het maakt gebruik van:
 \begin{itemize}
-	\item Wifi
-	\item SMS
+	\item wifi
+	\item sms
 	\item GNSS
 \end{itemize}
 Door gebruik te maken van bovenstaande positioneringstechnieken is het de meest accurate en tegelijkertijd de traagste methode van alle besproken methodes. 
 \newline
 Deze methode wordt gebruikt bij noodtelfoon oproepen. Bij het begin van het bellen wordt er eerst gekeken of de Wifi en GPS aanstaat. Als de 'battery check' positief is, worden deze services aangezet indien ze nog niet aanstonden. 
 \newline
-AML gaat parallel zijn locatie proberen bepalen aan de hand van wifi, SMS en GNSS, zodat het zo min mogelijk tijd verliest om de beller te lokaliseren. De lokatie bepaling gebeurd aan de hand van een geprioritiseerde rij. Indien GNSS als eerste de lokatie kan bepalen wordt dit als eerst verzonden naar de hulpdiensten. 
-Als tweede optie wordt de lokatie bepaald met behulp van wifi. Hierbij wordt de locatie gebaseerd op wifi 'Service Set Identifiers' (SSIDs) of MAC-adressen van access points waarmee de gsm verbonden is. Als laatste optie wordt de cell ID verstuurd van de mast waarmee de beller verbonden is. Indien men geen lokatie kan bepalen, wordt er een SMS verstuurd dat alle positioneringstechnieken (wifi, GNSS, cell ID) gefaald hebben.
+AML gaat parallel zijn locatie proberen bepalen aan de hand van wifi, sms en GNSS, zodat het zo min mogelijk tijd verliest om de beller te lokaliseren. De lokatie bepaling gebeurd aan de hand van een geprioritiseerde rij. Indien GNSS als eerste de lokatie kan bepalen wordt dit als eerst verzonden naar de hulpdiensten. 
+Als tweede optie wordt de lokatie bepaald met behulp van wifi. Hierbij wordt de locatie gebaseerd op wifi 'Service Set Identifiers' (SSIDs) of MAC-adressen van access points waarmee de gsm verbonden is. Als laatste optie wordt de cell ID verstuurd van de mast waarmee de beller verbonden is. Indien men geen lokatie kan bepalen, wordt er een sms verstuurd dat alle positioneringstechnieken (wifi, GNSS, cell ID) gefaald hebben.
 \newline
 Sinds Januari 2020 zijn er slechts 19 landen wereldwijd die AML implementeren. AML kan alleen gebruikt worden bij het bellen van het noodnummer, waardoor dit geen optie is voor de proof of concept. \autocite{aml}
-
+\subsection{\IfLanguageName{dutch}{General Packet Radio Service (GPRS)}{General Packet Radio Service (GPRS)}}
+General Packet Radio Service (GPRS) is een totaal andere manier die gebruikt kan worden  om een locatie te bepalen. Deze technologie vereist geen GPS, maar wel roaming. Deze verbinding haalt de locatie op van zendmasten, waardoor je via triangulatie je locatie kan bepalen (Zie figuur:\ref{fig:triangulatie_gprs}). Deze techniek werkt hetzelfde als GPS.
+\newline
+Een nadeel van deze technologie is dat het veel minder accuraat is. Volgens \cite{gprs} kan dit variëren van 20 tot 50 meter. Ondanks het nadeel, is er een groot voordeel. Deze techniek kan gebruikt worden voor het bepalen van de locatie en is tegelijkertijd in staat zijn locatie te delen aan de hand van roaming of sms. Het gebruik van sms zorgt ervoor dat de proof of concept ook gebruikt kan worden op afgelegen plaatsen waar roaming geen optie is. Ook is het een goedkopere optie, want sms-en zijn voor providers zo goed als gratis in tegenstelling tot mobiele data. De combinatie van een GPS-ontvanger (ondersteuning voor NAVSTAR, Galileo en GLONASS) en de mogelijkheid tot het versturen van een sms zou zorgen voor een ideale proof of concept. 
+\begin{figure}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie_gprs.png}
+%https://www.google.com/search?tbs=simg:CAQSrQEJrrLXpgtW1nYaoQELELCMpwgaYgpgCAMSKJkIsBTyEoIDmgiDA5cIgQO5B4gDmj2dPaE0_1zO2J9A2-DP5M8U9yzcaMJJQwz9JWeZp5PeQ91p9B_1t-s-t57GaZYKqFkjHWNDErGPjWTFiDfGTdUPZPzFLx_1SAEDAsQjq7-CBoKCggIARIEyZLpqAwLEJ3twQkaGgoYCgZjaXJjbGXapYj2AwoKCC9tLzAxdmtsDA&sxsrf=ALeKk02ZKs3-33pizx_yPs1LYQ2NzzRrMw:1583058379858&q=trianguleren+mobiel&tbm=isch&sa=X&ved=2ahUKEwjJ_46DiPnnAhWNLewKHREFBhEQwg4oAHoECAcQKA
+    \caption{source:google}
+    \label{fig:triangulatie_gprs}
+\end{figure}
+\pagebreak
 \section{\IfLanguageName{dutch}{Ongunstige omstandigheden}{Unfavorable circumstances}}
 \subsection{\IfLanguageName{dutch}{Water}{Water}}
+Het grooste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat het signaal van de radiofrequentie te zwak snel afneemt onder water. Hetzelfde geldt voor mobiel netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout- en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het wordt toegepast op surfboards. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
 \subsection{\IfLanguageName{dutch}{Sneeuw}{Snow}}
-
+In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal die passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, breking, multipad en vervagen. (Zie figuur:\ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor de L1 band van het GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in sneeuw. Bijvoorbeeld een GPS-signaal kan tot 400 meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarvan water 1 percent van het volume opmaakt, penetreert het GPS-signaal slechts 3 meter.
+\autocite{avalanche_gps} Hieruit wijst dat de proof of concept ook mogelijks kan dienen als een lawinepieper. 
+\begin{figure}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avalanche.png}
+    %https://www.google.com/url?sa=i&url=https%3A%2F%2Fspacenews.com%2F40530gps-2f-6-navigation-satellite-slated-to-launch-on-may-15%2F&psig=AOvVaw0tzOggmMim-1CxoYTRl1Ze&ust=1583062792344000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCOD3jc3W9ucCFQAAAAAdAAAAABAD
+    \caption{Signaal paden in lawine puin}
+    \cite{avalanche_gps}
+    \label{fig:avalanche}
+\end{figure}
+\pagebreak
 \section{\IfLanguageName{dutch}{Toestellen}{Devices}}
+Voor de proof of concept werd er goed nagedacht welke mogelijkheden er gebruikt kunnen worden. De proof of concept moet voldoen aan de volgende vereisten:
+\begin{itemize}
+    \item 1. Mogelijkheid tot het bepalen van de locatie.
+    \item 2a. Mogelijkheid tot het delen van de locatie via sms.
+    \item 2b. Mogelijkheheid tot het delen van de locatie via roaming.
+    \item 3. Mogelijkheid om te werken op batterij.
+    \item 4. Mogelijkheid tot waterdichtheid.
+    \item 5. Zo goedkoop mogelijk blijven.
+\end{itemize}
+Naast deze eisen moet de batterijduur zolang mogelijk meegaan en de locatiebepaling moet zo accuraat mogelijk zijn.
 \subsection{\IfLanguageName{dutch}{Raspberry Pi}{Raspberry Pi}}
+Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerking komen zijn (de prijzen zijn geraadpleegd op https://www.raspberrypi.org/products):
+\begin{itemize}
+    \item Raspberry Pi 4 Model B (39.95 euro)
+    \item Raspberry Pi 3 A+ (26.80 euro)
+    \item Raspberry Pi 3 B+ (39.95 euro)
+    \item Raspberry Pi 3 B (37.95 euro)
+    \item Raspberry Pi Zero (10.71 euro)
+    \item Raspberry Pi Zero W (5.35 euro)
+\end{itemize}
+De modellen Raspberry Pi Zero en Raspberry Pi Zero W werden niet besproken doordat deze geen GPIO pins bevatten. 
+\newline
+Naast de kostprijs van de Raspberry Pi zijn er nog componenten nodig om de proof of concept te doen laten werken. 
+Allereest is er een SD-kaart (minimum 8 GB) nodig voor het besturingssysteem te installeren. De laagste prijs is 9.99 euro \href{https://www.bol.com/nl/p/philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123&utm_source=51123&utm_medium=Affiliates&utm_campaign=CPS&utm_content=txl}{goedkoop SD-kaartje}.
+\newline
+Voor de locatie bepaling kunnen we opteren voor een HAT voor de Raspberry Pi die GSM / GPRS / GNSS en Bluetooth ondersteund (46.61 euro). Dit pakket bevat alles wat het nodig heeft om de HAT te laten functioneren, behalve de Raspberry Pi, power supply en een SD-kaart. (https://www.robotshop.com/eu/en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html)
+\newline
+Voor het gebruik van sms heeft de proof of concept nood aan een simkaart met een abbonement.
+\newline
+Indien we het goedkoopste model (Raspberry Pi Zero W) kiezen is het totaalbedrag 61.95 euro + aankoop simkaart met abbonement of herlaad tegoed. (Zie figuur: \ref{fig:rpi})
+\begin{figure}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{rpizero.png}
+    %https://www.sossolutions.nl/waveshare-gsm-gprs-gnss-bluetooth-hat-voor-raspberry-pi?gclid=Cj0KCQiA1-3yBRCmARIsAN7B4H3Z9w0Z11t4JCm9ggLyzhnV-yiRS6dDgZtefIcETuYflOTaskne-ywaAkLnEALw_wcB
+    \caption{source:google}
+    \label{fig:rpi}
+\end{figure}
 \subsection{\IfLanguageName{dutch}{Arduino}{Arduino}}
+Naast de Raspberry Pi is er de mogelijkheid om gebruik te maken van een Arduino. Arduino heeft een module die geprogrammeerd kan worden om te voldoen aan alle eisen, namelijk de MKR 1400 GSM module. Dit component kan zijn locatie bepalen aan de hand van GPRS triangulatie en doorsturen via sms of roaming doordat het toegang heeft tot het GPRS netwerk. De kit heeft een kostprijs van 60.90 euro \autocite{arduino}. In deze kit is er ook een simkaart bijgeleverd die de eerste 90 dagen geldig blijft.

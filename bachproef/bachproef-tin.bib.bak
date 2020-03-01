@@ -67,7 +67,7 @@
   author = {Arielle Samuelson},
   editor = {Arielle Samuelson},
   title  = {What is an Atomic Clock?},
-  year   = {2019},
+  year   = {2020},
   date   = {2020-02-20},
   url    = {https://www.nasa.gov/feature/jpl/what-is-an-atomic-clock},
 }
@@ -104,7 +104,7 @@
   url    = {https://www.windowscentral.com/gps-vs-agps-quick-tutorial},
 }
 
-@Misc{a,
+@Misc{aml,
   author = {EENA},
   editor = {EENA},
   title  = {Advanced Mobile Location (AML) Specifications \& Requirements},

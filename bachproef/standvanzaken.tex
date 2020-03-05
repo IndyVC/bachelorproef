@@ -7,7 +7,7 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 \section{\IfLanguageName{dutch}{Global Positioning System (GPS)}{Global Positioning System (GPS)}}
-Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn er heel wat verschillen. Als er gesproken wordt over GPS, wordt er impliciet NAVSTAR bedoeld. Dit is het allereerste operationele GPS-systeem dat toegankelijk werd gemaakt voor de gewone gebruikers. In deze sectie wordt er toegelicht wat de verschillende systemen zijn en welke gebruikt kunnen worden.
+Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn er heel wat verschillen. Als er gesproken wordt over GPS, wordt er impliciet NAVSTAR bedoeld. Dit is het eerste operationele GPS-systeem dat begonnen was als militaire toepassing. Het is ontwikkeld door de 'United States Air Force'. \autocite{gnss}  Nadien is NAVSTAR toegankelijk gemaakt voor de gewone gebruikers. In deze sectie wordt er toegelicht wat de verschillende systemen zijn en welke gebruikt kunnen worden.
 
 \subsection{\IfLanguageName{dutch}{De werking van GPS}{How GPS works}}
 \begin{figure}
@@ -33,10 +33,10 @@ Om een locatie te bepalen zijn er 3 zaken nodig:
 De groundstations worden gebruikt om de locatie bij te houden van de GPS-satellieten. Deze stations worden niet gebruikt voor het bepalen van de huidige locatie van een gebruiker. 
 \newline
 \newline
-De GPS-satellieten broadcasten een signaal uit die de afstand en tijd bevat. Deze tijd wordt bepaald aan de hand van een atomaire klok. Een regulaire klok kan na 6 weken een volledige milliseconde afwijken van de werkelijke tijd, wat zeer gevaarlijk is voor ruimteverkeer. Hierdoor maken satellieten gebruik van een ander type klok, de atomaire klok.Na 10 jaar wijkt een atomaire klok slechts een microseconde af, waardoor het veiliger is. Om deze afwijking te corrigeren worden er soms updates uitgevoerd. \autocite{atomic_clock}
+De GPS-satellieten broadcasten een signaal uit die de afstand en tijd bevat. Deze tijd wordt berekend met een klok aan boord. Een kwartskristal klok kan na 6 weken een volledige milliseconde afwijken van de werkelijke tijd, wat zeer gevaarlijk is voor ruimteverkeer. Hierdoor maken satellieten gebruik van een ander type klok, de atoomklok. Atoomklokken zijn een 'verbetering' ten opzichte van de kwartskrital klok.  Na 10 jaar wijkt een atoomklok slechts een microseconde af, wat stabieler is in vergelijking met de kwartskristal klok. Alles moet stabiel blijven voor ruimtevaartmisies, waardoor de afwijking van de atoomklok dagelijks gecorrigeerd wordt. \autocite{atomic_clock}
 \newline
 Als de GPS-ontvanger de tijd en afstand uit het signaal heeft kunnen afleiden, kan het aan de hand van triangulatie zijn locatie bepalen. (Zie figuur: \ref{fig:triangulatie})
-Er wordt per satelliet een radius bepaald en er wordt gekeken naar de overlapping van drie satellieten. Na deze overlapping blijven er nog twee punten over waar de GPS-ontvanger zich mogelijks bevindt. Hiervoor is de vierde satelliet nodig. Deze laatste satelliet sluit een van de twee mogelijke locaties uit, waardoor de locatie van de GPS-ontvanger juist bepaald wordt (de juiste locatie kan afwijken van de realiteit, tabel \ref{tab:GNSS-vergelijking}). 
+Er wordt per satelliet een radius bepaald. Hiervoor zijn minstens drie satellieten nodig. De overlapping van de radiussen bepalen één punt, de locatie van de GPS-ontvanger. Soms kan dit niet accuraat gebeuren, waardoor de radius van een vierde satelliet kan helpen. De laatste radius sluit dan foute mogelijkheden uit waardoor de locatie accurater is. Kortom, hoe meer satellieten, hoe beter de locatiebepaling gebeurd. 
 
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie.jpg}
@@ -46,9 +46,9 @@ Er wordt per satelliet een radius bepaald en er wordt gekeken naar de overlappin
 \end{figure} 
 \pagebreak
 \subsection{\IfLanguageName{dutch}{Global Navigation Satellite Systems (GNSS)}{Global Navigation Satellite Systems (GNSS)}}
-Als we spreken over het bepalen van onze locatie, gebruiken we altijd de term 'GPS'. Echter is dit niet correct, want er bestaan veel meer technologieën en systemen die hierbij helpen. Iedere technologie wordt verder besproken in dit hoofdstuk.
+Als we spreken over het bepalen van onze locatie, gebruiken we altijd de term 'GPS'. Dit is echter niet correct, want er bestaan veel meer technologieën en systemen die hierbij helpen. Iedere technologie wordt verder besproken in dit hoofdstuk.
 \newline
-Het 'Global Positioning System' is een ruimte gebaseerd radio navigatie systeem dat eigendom is van Amerika en bestuurd wordt door de 'United States Air Force' (USAF). Officieel heet dit systeem 'Navigation Satellite Time And Ranging' (NAVSTAR). De allereerste versie werd gelanceerd in 1978 en in 1995 operationeel verklaard. GPS is instaat om een ongelimiteerde limiet van gebruikers met een GPS-ontvanger te voorzien van hun locatie op ieder moment van de dag, onafhankelijk van het weer en over de hele wereld. \autocite{gps}
+Het 'Global Positioning System' is een ruimte gebaseerd navigatiesysteem dat eigendom is van de Verenigde Staten en bestuurd wordt door de 'United States Air Force' (USAF). Officieel heet dit systeem 'Navigation Satellite Time And Ranging' (NAVSTAR). De allereerste versie werd gelanceerd in 1978 en in 1995 operationeel verklaard. GPS is in staat om een ongelimiteerde limiet van gebruikers met een GPS-ontvanger te voorzien van hun locatie op ieder moment van de dag, onafhankelijk van het weer en over de hele wereld. \autocite{gps}
 \newline
 Naast NAVSTAR bestaat er ook:
 \begin{itemize}
@@ -75,21 +75,21 @@ Er zijn verschillen tussen tussen deze Global Navigation Satellite Systems, name
 \autocite{gnss}
 \end{table}
 \newline
-De reden voor het bestaan van deze verschillende systemen is van politieke aard. Zo wou de Europese Unie en Rusland onafhankelijk worden van Amerika (NAVSTAR). 
+De reden voor het bestaan van deze verschillende systemen is van politieke aard. De EU en Rusland wilden niet afhankelijk zijn van de Verenigde Staten (NAVSTAR).
 
 \section{Verschillende Locatiebepaling-technologieën}
 \label{sec:Locatiebepaling-technologieën}
-Het bepalen van je positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Iedere optie wordt in deze sectie besproken.
+Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Iedere optie wordt in deze sectie besproken.
 \subsection{\IfLanguageName{dutch}{Standard Positioning Service (SPS)}{Standard Positioning Service (SPS)}}
-De 'Standard Positioning Service' (SPS) is een positionerings- en timingdienst die signalen broadcast op de GPS L1 frequentie. Deze frequentie, die gebruikt wordt door alle NAVSTAR GPS-satellieten, zorgt ervoor dat GPS vrij te gebruiken is voor iedereen. \autocite{gps}
+De 'Standard Positioning Service' (SPS) is een positionerings- en timingdienst die signalen broadcast op de GPS L1-frequentie. Deze frequentie, die gebruikt wordt door alle NAVSTAR GPS-satellieten, zorgt ervoor dat GPS vrij te gebruiken is voor iedereen. \autocite{gps}
 \newline
 Deze vorm van GPS is vrij accuraat, maar presteert minder in vergelijking met het 'Precision Positioning Service'. 
 \subsection{\IfLanguageName{dutch}{Precision Positioning Service (PPS)}{Precision Positioning Service (PPS)}}
-De 'Precision Positioning Service' (PPS) is een  positionerings- en timingdienst die signalen broadcast op de GPS L1 en L2 frequenties. Het functioneert hetzelfde als SPS, maar hierbij wordt er ook gebruik gemaakt van een precisie code (P) die alleen beschikbaar is voor geautoriseerde gebruikers. Hiermee wordt voornamelijk het Amerikaans leger en zijn allianties bedoeld. \autocite{pps} Voor september 2007 werd er gebruik gemaakt van 'Selective Availability' (SA). Zo kon het leger van Amerika de accuraatheid bewust degraderen voor veiligheidsredenen. De nieuwere GPS III satellieten zouden niet meer uitgerust zijn met de SA functie. 
+De 'Precision Positioning Service' (PPS) is een  positionerings- en timingdienst die signalen broadcast op de GPS L1 en L2 frequenties. Het functioneert hetzelfde als SPS, maar hierbij wordt er ook gebruik gemaakt van een precisiecode (P) die alleen beschikbaar is voor geautoriseerde gebruikers. Hiermee wordt voornamelijk het Amerikaans leger en zijn allianties bedoeld. \autocite{pps} Voor september 2007 werd er gebruik gemaakt van 'Selective Availability' (SA). Zo kon het leger van de Verenigde Staten de accuraatheid bewust degraderen voor veiligheidsredenen. De nieuwere GPS III-satellieten zouden niet meer uitgerust zijn met de SA-functie. 
 \newline
-Deze service wordt voor de proof of concept door voor de hand liggende redenen uitgesloten.
+Deze service wordt voor de proof of concept niet gebruikt omdat het  ontoegankelijk is voor gewone burgers.
 \subsection{\IfLanguageName{dutch}{Differential Global Positioning System (DGPS)}{Differential Global Positioning System (DGPS)}}
-Differential Global Positioning System (DGPS) verbeterd de accuraatheid van GPS. Dit systeem maakt gebruik van correctie technieken. Deze technieken kunnen real-time gebeuren, maar ook na het bepalen van de locatie. DGPS vereist een GPS-ontvanger (referentiestation/basestation) wiens locatie gekend is (fixed). De referentie gaat zijn locatie herberekenen en berekend het verschil tussen de gekende locatie en de berekende locatie. Het verschil wordt als volgt toegepast op de GPS-ontvanger wiens locatie we nog niet kenden. Deze techniek resulteert in een betere locatiebepaling voor de tweede GPS-ontvanger. \autocite{dgps} (Zie figuur:\ref{fig:dgps})
+Differential Global Positioning System (DGPS) verbetert de accuraatheid van GPS. Dit systeem maakt gebruik van correctietechnieken. Deze technieken kunnen real-time gebeuren, maar ook na het bepalen van de locatie. DGPS vereist een GPS-ontvanger (referentiestation/basestation) wiens locatie gekend is (fixed). De referentie gaat zijn locatie herberekenen en berekent het verschil tussen de gekende locatie en de berekende locatie. Het verschil wordt als volgt toegepast op de GPS-ontvanger zijn berekende locatie. Deze techniek resulteert in een betere locatiebepaling voor de tweede GPS-ontvanger. \autocite{dgps} (Zie figuur:\ref{fig:dgps})
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{dgps.png}
 		%https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FComponents-of-a-DGPS-System_fig1_252064818&psig=AOvVaw07YsVmaU9ifoTgAxmkFPSb&ust=1583073831676000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCPCjlt7_9ucCFQAAAAAdAAAAABAD
@@ -97,11 +97,11 @@ Differential Global Positioning System (DGPS) verbeterd de accuraatheid van GPS.
 	\label{fig:dgps}
 \end{figure}
 \newline
-De 'Flemish Positioning Service' (FLEPOS) maakt ook gebruik van deze techniek. Het FLEPOS 3.0-netwerk bestaat momenteel uit 45 GNSS referentiestations, waarvan 33 referentiestations in eigen beheer. Het gebruik hiervan is gratis indien de aanvraag voor een abonnement is goedgekeurd. Deze referentiestations bevinden zich in België, Nederland, Frankrijk, Duitsland en Engeland.
+De 'Flemish Positioning Service' (FLEPOS) maakt ook gebruik van deze techniek. Het FLEPOS 3.0-netwerk bestaat momenteel uit 45 GNSS-referentiestations, waarvan 33 referentiestations in eigen beheer. Het gebruik hiervan is gratis indien de aanvraag voor een abonnement is goedgekeurd. Deze referentiestations bevinden zich in België, Nederland, Frankrijk, Duitsland en Engeland.
 \newline
 Door het beperkt aantal referentiestations kan deze methode niet geïmplementeerd worden binnen de proof of concept, omdat het bereik niet globaal genoeg is.
 \subsection{\IfLanguageName{dutch}{Wide Area Augmentation System (WAAS)}{Wide Area Augmentation System (WAAS)}}
-'Wide Area Augmentation' WAAS kan ,naast basestations op aarde (DGPS), ook GEO-satellieten gebruiken als vaste referentiepunten. Deze satellieten bevinden zich op 36000 km hoogte boven de evenaar en draaien rond op dezelfde snelheid als de aarde. Hierdoor blijft de positie van de geosatelliet stationair ten opzichte van de aarde, waardoor het gebruikt kan worden als referentiestation.(Zie figuur:\ref{fig:geostationair})
+'Wide Area Augmentation' (WAAS) kan ,naast basestations op aarde (DGPS), ook GEO-satellieten gebruiken als vaste referentiepunten. Deze satellieten bevinden zich op 36.000 km hoogte boven de evenaar en draaien rond op dezelfde snelheid als de aarde. Hierdoor blijft de positie van de geosatelliet stationair ten opzichte van de aarde, waardoor het gebruikt kan worden als referentiestation.(Zie figuur:\ref{fig:geostationair})
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{geostationair.png}
 	%https://aardrijkskunde.dbz.be/graad3/taken/oefening_satellieten.htm
@@ -118,14 +118,10 @@ Gsm masten hebben GPS-ontvangers die voortdurend informatie van GPS-satellieten 
 	\item Minder batterijverbruik;
 	\item Mogelijkheid om de locatie indoor te bepalen.
 \end{itemize} 
-Andere voordelen zijn:
-\begin{itemize}
-	\item Hoge accuraatheid (5-50 meter);
-	\item Slechts twee waarneembare GPS-satellieten nodig.
-\end{itemize}
-Zoals je kan merken is de accuraatheid minder goed dan het zelf bepalen van de locatie (Zie: \ref{tab:GNSS-vergelijking}). Er zullen field tests en metingen worden uitgevoerd om deze stellingen te controleren. \autocite{agps}
+Andere voordelen zijn hoge accuraatheid (5-50 meter) en er zijn slechts twee waarneembare GPS-satellieten nodig.
+Opmerkelijk is dat de accuraatheid minder goed is in vergelijking met het zelf bepalen van de locatie (Zie: \ref{tab:GNSS-vergelijking}). Er zullen field tests en metingen worden uitgevoerd om deze stellingen te controleren. \autocite{agps}
 \subsection{\IfLanguageName{dutch}{Advanced Mobile Location (AML)}{Advanced Mobile Location (AML)}}
-Tot nu toe was er nog geen enkele techniek die de exacte locatie kon bepalen. 'Advanced Mobile Location' (AML) is de nieuwste (opensource) techniek die hiervoor een oplossing biedt. Het maakt gebruik van:
+Tot nu toe was er nog geen enkele techniek die de exacte locatie kon bepalen. 'Advanced Mobile Location' (AML) is de nieuwste (open source) techniek die hiervoor een oplossing biedt. Het maakt gebruik van:
 \begin{itemize}
 	\item wifi
 	\item sms
@@ -135,14 +131,14 @@ Door gebruik te maken van bovenstaande positioneringstechnieken is het de meest 
 \newline
 Deze methode wordt gebruikt bij noodtelfoon oproepen. Bij het begin van het bellen wordt er eerst gekeken of de Wifi en GPS aanstaat. Als de 'battery check' positief is, worden deze services aangezet indien ze nog niet aanstonden. 
 \newline
-AML gaat parallel zijn locatie proberen bepalen aan de hand van wifi, sms en GNSS, zodat het zo min mogelijk tijd verliest om de beller te lokaliseren. De lokatie bepaling gebeurd aan de hand van een geprioritiseerde rij. Indien GNSS als eerste de lokatie kan bepalen wordt dit als eerst verzonden naar de hulpdiensten. 
+AML gaat parallel zijn locatie proberen bepalen aan de hand van wifi, sms en GNSS, zodat het zo min mogelijk tijd verliest om de beller te lokaliseren. De lokatiebepaling gebeurt aan de hand van een geprioritiseerde rij. Indien GNSS als eerste de lokatie kan bepalen wordt dit als eerst verzonden naar de hulpdiensten. 
 Als tweede optie wordt de lokatie bepaald met behulp van wifi. Hierbij wordt de locatie gebaseerd op wifi 'Service Set Identifiers' (SSIDs) of MAC-adressen van access points waarmee de gsm verbonden is. Als laatste optie wordt de cell ID verstuurd van de mast waarmee de beller verbonden is. Indien men geen lokatie kan bepalen, wordt er een sms verstuurd dat alle positioneringstechnieken (wifi, GNSS, cell ID) gefaald hebben.
 \newline
-Sinds Januari 2020 zijn er slechts 19 landen wereldwijd die AML implementeren. AML kan alleen gebruikt worden bij het bellen van het noodnummer, waardoor dit geen optie is voor de proof of concept. \autocite{aml}
+In 2020 zijn er nog steeds slechts 19 landen wereldwijd die AML implementeren. AML kan alleen gebruikt worden bij het bellen van het noodnummer. De proof of concept werkt alleen met je eigen nummer, waardoor AML geen optie is. \autocite{aml} Ook is het bellen van het noodnummer zonder noodgeval illegaal.
 \subsection{\IfLanguageName{dutch}{General Packet Radio Service (GPRS)}{General Packet Radio Service (GPRS)}}
 General Packet Radio Service (GPRS) is een totaal andere manier voor locatiebepaling. Deze technologie vereist geen GPS, maar wel roaming. Deze verbinding haalt de locatie op van zendmasten, waardoor je via triangulatie je locatie kan bepalen (Zie figuur:\ref{fig:triangulatie_gprs}). Deze techniek werkt hetzelfde als GPS.
 \newline
-Een nadeel van deze technologie is dat het veel minder accuraat is. Volgens \cite{gprs} kan dit variëren van 20 tot 50 meter. Het voordeel aan GPRS is dat het instaat is via roaming of sms zijn locatie te delen. Het gebruik van sms zorgt ervoor dat de proof of concept op een zeer globale manier gebruikt kan worden. Ook is het een goedkopere optie, want sms-en zijn voor providers zo goed als gratis in tegenstelling tot mobiele data. De combinatie van een GPS-ontvanger (ondersteuning voor NAVSTAR, Galileo en GLONASS) en de mogelijkheid tot het versturen van een sms zou zorgen voor een ideale proof of concept. 
+Een nadeel van deze technologie is dat het veel minder accuraat is. Volgens \cite{gprs} kan dit variëren van 20 tot 50 meter. Het voordeel aan GPRS is dat het in staat is via roaming of sms zijn locatie te delen. Het gebruik van sms zorgt ervoor dat de proof of concept op een zeer globale manier gebruikt kan worden. Ook is het een goedkopere optie, want sms-en zijn voor providers zo goed als gratis in tegenstelling tot mobiele data. De combinatie van een GPS-ontvanger (ondersteuning voor NAVSTAR, Galileo en GLONASS) en de mogelijkheid tot het versturen van een sms zou zorgen voor een ideale proof of concept. 
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie_gprs.png}
 %https://www.google.com/search?tbs=simg:CAQSrQEJrrLXpgtW1nYaoQELELCMpwgaYgpgCAMSKJkIsBTyEoIDmgiDA5cIgQO5B4gDmj2dPaE0_1zO2J9A2-DP5M8U9yzcaMJJQwz9JWeZp5PeQ91p9B_1t-s-t57GaZYKqFkjHWNDErGPjWTFiDfGTdUPZPzFLx_1SAEDAsQjq7-CBoKCggIARIEyZLpqAwLEJ3twQkaGgoYCgZjaXJjbGXapYj2AwoKCC9tLzAxdmtsDA&sxsrf=ALeKk02ZKs3-33pizx_yPs1LYQ2NzzRrMw:1583058379858&q=trianguleren+mobiel&tbm=isch&sa=X&ved=2ahUKEwjJ_46DiPnnAhWNLewKHREFBhEQwg4oAHoECAcQKA
@@ -154,7 +150,7 @@ Een nadeel van deze technologie is dat het veel minder accuraat is. Volgens \cit
 \section{\IfLanguageName{dutch}{Ongunstige omstandigheden}{Unfavorable circumstances}}
 De proof of concept moet blijven functioneren in ongunstige omstandigheden, zoals sneeuw en water. Het moet in staat zijn om te functioneren als GPS-ontvanger op een surfboard en als lawinepieper. In deze sectie wordt onderzocht aan welke voorwaarden de proof of concept moet voldoen.
 \subsection{\IfLanguageName{dutch}{Water}{Water}}
-Het grooste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor mobiel netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout- en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater, dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het wordt toegepast op surfboards. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
+Het grooste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor mobiel netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het wordt toegepast op surfboards. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
 \subsection{\IfLanguageName{dutch}{Sneeuw}{Snow}}
 In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal die passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, breking, multipad en vervagen. (Zie figuur:\ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor het (L1 band) GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in sneeuw. Bijvoorbeeld een GPS-signaal kan tot 400 meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarvan water 1 percent van het volume opmaakt, penetreert het GPS-signaal slechts 3 meter.
 \autocite{avalanche_gps} Hieruit wijst dat de proof of concept ook mogelijks kan dienen als een lawinepieper. 
@@ -166,7 +162,7 @@ In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw t
 \end{figure}
 \pagebreak
 \section{\IfLanguageName{dutch}{Toestellen}{Devices}}
-Voor de proof of concept werd er goed nagedacht welke Locatiebepaling-technologieën gebruikt kunnen worden. Naast bruikbaar in ideale omstandigheden, moet het ook in ongunstige omstandigheden kunnen blijven functioneren. Ook moet er voldaan worden aan de volgende eisen:
+Voor de proof of concept werd er goed nagedacht welke Locatiebepaling-technologieën gebruikt kunnen worden. Naast bruikbaar in ideale omstandigheden, moet het ook in ongunstige omstandigheden kunnen blijven functioneren. Ook moet er voldaan worden aan de volgende vereisten:
 \begin{itemize}
     \item Mogelijkheid tot het bepalen van de locatie;
     \item Mogelijkheid tot het delen van de locatie via sms;
@@ -175,7 +171,7 @@ Voor de proof of concept werd er goed nagedacht welke Locatiebepaling-technologi
     \item Mogelijkheid tot waterdichtheid;
     \item Zo goedkoop mogelijk blijven.
 \end{itemize}
-Naast deze eisen moet de batterijduur zolang mogelijk meegaan en de locatiebepaling moet zo accuraat mogelijk zijn.
+Naast deze eisen moet de batterijduur zo lang mogelijk meegaan en de locatiebepaling moet zo accuraat mogelijk zijn.
 \subsection{\IfLanguageName{dutch}{Raspberry Pi}{Raspberry Pi}}
 Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerking komen zijn:
 \begin{itemize}
@@ -188,10 +184,10 @@ Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerkin
 \end{itemize}
 (de prijzen zijn geraadpleegd op: \url{https://www.raspberrypi.org/products})
 \newline
-Naast de kostprijs van de Raspberry Pi zijn er nog componenten nodig om de proof of concept te doen laten werken. 
-Allereest is er een SD-kaart (minimum 8 GB) nodig voor het besturingssysteem te installeren. De laagste prijs is 9.99 euro \href{https://www.bol.com/nl/p/philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123&utm_source=51123&utm_medium=Affiliates&utm_campaign=CPS&utm_content=txl}{goedkoop SD-kaartje}.
+Naast de kostprijs van de Raspberry Pi zijn er nog componenten nodig om de proof of concept te laten functioneren. 
+Allereest is er een SD-kaart (minimum 8 GB) nodig om het het besturingssysteem te installeren. De laagste prijs is 9.99 euro. (\url{https://www.bol.com/nl/p/philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123&utm_source=51123&utm_medium=Affiliates&utm_campaign=CPS&utm_content=txl}).
 \newline
-Voor de locatie bepaling kunnen we opteren voor een HAT die past op de Raspberry Pi. De HAT ondersteunt gsm, GPRS, GNSS en Bluetooth (46.61 euro). Dit pakket bevat alles wat het nodig heeft om de HAT te laten functioneren, behalve de Raspberry Pi, power supply en een SD-kaart. (de prijzen zijn geraadpleegd op: \url{https://www.robotshop.com/eu/en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html})
+Voor de locatiebepaling kunnen we opteren voor een HAT die past op de Raspberry Pi. De HAT ondersteunt gsm, GPRS, GNSS en Bluetooth (46.61 euro). Dit pakket bevat alles wat het nodig heeft om de HAT te laten functioneren, behalve de Raspberry Pi, power supply en een SD-kaart. (de prijzen zijn geraadpleegd op: \url{https://www.robotshop.com/eu/en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html})
 \newline
 Voor het gebruik van sms heeft de proof of concept nood aan een simkaart met een abbonement.
 \newline
@@ -203,7 +199,7 @@ Indien we het goedkoopste model (Raspberry Pi Zero W) kiezen is het totaalbedrag
     \label{fig:rpi}
 \end{figure}
 \subsection{\IfLanguageName{dutch}{Arduino}{Arduino}}
-Naast de Raspberry Pi is er de mogelijkheid om gebruik te maken van een Arduino. Arduino heeft een module die geprogrammeerd kan worden om te voldoen aan alle eisen, namelijk de MKR 1400 GSM module. (Zie figuur: \ref{fig:mkr1400}) Dit component kan zijn locatie bepalen aan de hand van GPRS triangulatie en doorsturen via sms of roaming doordat het toegang heeft tot het GPRS netwerk. De kit heeft een kostprijs van 80,35 euro \autocite{arduino}. In deze kit is er ook een simkaart bijgeleverd die de eerste 90 dagen geldig blijft.
+Naast de Raspberry Pi is er de mogelijkheid om gebruik te maken van een Arduino. Arduino heeft een module die geprogrammeerd kan worden om te voldoen aan alle eisen, namelijk de MKR 1400 GSM module. (Zie figuur: \ref{fig:mkr1400}) Deze component kan zijn locatie bepalen aan de hand van GPRS-triangulatie en doorsturen via sms of roaming doordat het toegang heeft tot het GPRS netwerk. De kit heeft een kostprijs van 80,35 euro \autocite{arduino}. In deze kit is er ook een simkaart bijgeleverd die de eerste 90 dagen geldig blijft.
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mkr1400gsm.png}
     %https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA
@@ -211,9 +207,9 @@ Naast de Raspberry Pi is er de mogelijkheid om gebruik te maken van een Arduino.
     \label{fig:mkr1400}
 \end{figure}
 \newline
-Naast de MKR 1400 GSM module kan er ook gebruik gemaakt worden van een MKR GPS Shield (41,75 euro) die past op het MKR bord. Indien er gebruik gemaakt wordt van beide modules, zal de accuraatheid van de positiebepaling veel beter zijn dan simpelweg GPRS (\ref{sec:Locatiebepaling-technologieën}). Als laatste is er ook nood aan een lithium polymeer (LiPo) batterij. Deze batterijen worden ook gebruikt voor gsm's, laptops en tablets. Specifiek (om compatibel te zijn met het MKR module) gaat het om een 3.7V 2500mAh LiPo batterij met een kostprijs van 25,90 euro.(de prijzen zijn geraadpleegd op: \url{https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh?gclid=CjwKCAiA-vLyBRBWEiwAzOkGVKAFfQbZQ7EKO4Ke1SrnX2-U1CqiAo-g8MHoKe-CbwRulcD3-6JbVxoCe3kQAvD_BwE}).
+Naast de MKR 1400 GSM module kan er ook gebruik gemaakt worden van een MKR GPS Shield (41,75 euro) die past op het MKR bord. Indien eu5ir gebruik gemaakt wordt van beide modules, zal de accuraatheid van de positiebepaling veel beter zijn dan simpelweg GPRS (\ref{sec:Locatiebepaling-technologieën}). Als laatste is er ook nood aan een lithium polymeer (LiPo) batterij. Deze batterijen worden ook gebruikt voor gsm's, laptops en tablets. Specifiek (om compatibel te zijn met het MKR module) gaat het om een 3.7V 2500mAh LiPo batterij met een kostprijs van 25,90 euro.(de prijzen zijn geraadpleegd op: \url{https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh?gclid=CjwKCAiA-vLyBRBWEiwAzOkGVKAFfQbZQ7EKO4Ke1SrnX2-U1CqiAo-g8MHoKe-CbwRulcD3-6JbVxoCe3kQAvD_BwE}).
 \newline
-De totale kostprijs zou komen op 148 euro (exclusief casing). Dit valt nog altijd lager dan de kost van een lawinepieper en een surfboard tracker.
+De totale kostprijs zou komen op 148 euro (exclusief casing). Dit valt nog altijd lager uit dan de kost van een lawinepieper en een surfboard tracker.
 \subsection{Proof of concept}
 De proof of concept bestaat uit de MKR 1400 GSM Module met een MKR GPS Shield. Deze optie is gekozen, omdat het goedkoop en klein is. Ook heeft de MKR 1400 GSM module (microcontroller) een beter batterijverbruik ten opzichte van de Raspberry Pi (computer).
 \newline

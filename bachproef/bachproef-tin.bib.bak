@@ -9,7 +9,7 @@
 }
 
 @PhdThesis{avalancheTransceivers,
-  author      = {N. Ayuso ⁎, J.A. Cuchí, F. Lera, J.L. Villarroel},
+  author      = {Ayuso, N. and Cuchí, J.A. and Lera, F. and J.L. Villarroel},
   title       = {A deep insight into avalanche transceivers for optimizing rescue},
   institution = {Aragón Institute of Engineering Research},
   year        = {2014},

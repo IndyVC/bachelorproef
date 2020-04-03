@@ -24,5 +24,6 @@ De functie van de backend is het ontvangen van locaties van de proof of concept 
 De methode hangt af van de beschikbaarheid van het signaal. Indien er geen GPS-signaal gevonden kan worden, schakelt de proof of concept vanzelf over op AGPS. Maar GPS blijft wel de eerste keus omdat dit accurater is dan AGPS. Indien de lokatie bepaalt is via AGPS, zullen de velden snelheid en aantal satellieten leeg zijn. Dit komt omdat AGPS data van gsm-masten gebruikt (zie hoofdstuk \ref{ch:stand-van-zaken}). De lokatie wordt dan niet bepaalt door satellieten, het is slechts een schatting. 
 
 \section{\IfLanguageName{dutch}{Deployment}{Deployment}}
-Naast de code staat ook het programma online. De backend kan \href{https://indy-bap-backend.herokuapp.com/api/locations}{hier} bekeken worden. Voor de deployment is er gebruik gemaakt van \href{www.heroku.com}{heroku}. Doordat het programma online draait, kan de \href{https://indy-bap-frontend.netlify.com/}{webapplicatie} deze data ophalen en weergeven.
- 
+Naast de code staat ook het programma online. De backend kan \href{https://indy-bap-backend.herokuapp.com/api/locations}{\underline{hier}} bekeken worden. Voor de deployment is er gebruik gemaakt van \href{www.heroku.com}{heroku}. Doordat het programma online draait, kan de \href{https://indy-bap-frontend.netlify.com/}{webapplicatie} deze data ophalen en weergeven.
+\newline
+Er is echter een nadeel, de backend maakt gebruik van een gratis hosting plan. Hierdoor kan het programma 'slapen' na derting minuten inactiviteit. Dit wilt zeggen dat u de webapplicatie twee keer moet laden. Eerste keer om de backend wakker te schudden en een tweede keer om webapplicatie te gebruiken.

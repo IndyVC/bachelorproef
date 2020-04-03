@@ -178,39 +178,42 @@ Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerkin
     \item Raspberry Pi 4 Model B (39.95 euro);
     \item Raspberry Pi 3 A+ (26.80 euro);
     \item Raspberry Pi 3 B+ (39.95 euro);
-    \item Raspberry Pi 3 B (37.95 euro);
-    \item Raspberry Pi Zero (10.71 euro);
-    \item Raspberry Pi Zero W (5.35 euro).
+    \item Raspberry Pi 3 B (37.95 euro).
 \end{itemize}
 (de prijzen zijn geraadpleegd op: \url{https://www.raspberrypi.org/products})
 \newline
-Naast de kostprijs van de Raspberry Pi zijn er nog componenten nodig om de proof of concept te laten functioneren. 
-Allereest is er een SD-kaart (minimum 8 GB) nodig om het het besturingssysteem te installeren. De laagste prijs is 9.99 euro. (\url{https://www.bol.com/nl/p/philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123&utm_source=51123&utm_medium=Affiliates&utm_campaign=CPS&utm_content=txl}).
-\newline
-Voor de locatiebepaling kunnen we opteren voor een HAT die past op de Raspberry Pi. De HAT ondersteunt gsm, GPRS, GNSS en Bluetooth (46.61 euro). Dit pakket bevat alles wat het nodig heeft om de HAT te laten functioneren, behalve de Raspberry Pi, power supply en een SD-kaart. (de prijzen zijn geraadpleegd op: \url{https://www.robotshop.com/eu/en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html})
-\newline
-Voor het gebruik van sms heeft de proof of concept nood aan een simkaart met een abbonement.
-\newline
-Indien we het goedkoopste model (Raspberry Pi Zero W) kiezen is het totaalbedrag 61.95 euro + aankoop simkaart met abbonement of herlaad tegoed. (Zie figuur: \ref{fig:rpi})
-\begin{figure}
-    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{rpizero.png}
-    %https://www.sossolutions.nl/waveshare-gsm-gprs-gnss-bluetooth-hat-voor-raspberry-pi?gclid=Cj0KCQiA1-3yBRCmARIsAN7B4H3Z9w0Z11t4JCm9ggLyzhnV-yiRS6dDgZtefIcETuYflOTaskne-ywaAkLnEALw_wcB
-    \caption{\href{https://www.sossolutions.nl/waveshare-gsm-gprs-gnss-bluetooth-hat-voor-raspberry-pi?gclid=Cj0KCQiA1-3yBRCmARIsAN7B4H3Z9w0Z11t4JCm9ggLyzhnV-yiRS6dDgZtefIcETuYflOTaskne-ywaAkLnEALw_wcB}{Raspberry Pi Zero met communicatie HAT}}
-    \label{fig:rpi}
-\end{figure}
+Naast de Raspberry Pi zijn er nog componenten nodig (zie tabel: \ref{tab:rpi}).
+\begin{table}[]
+	\begin{tabular}{llll}
+		Component           & Prijs (euro) & Doel                                                                & Link                                                                                                                                                                                                                             \\
+		Raspberry Pi 3A+    & 26.80        & Het hoofd toestel, draait een besturingssysteem en voert alles aan. & https://www.raspberrypi.org/products                                                                                                                                                                                             \\
+		SD-kaart (min. 8GB) & 9.99         & Hierop wordt het besturingssysteem en het script opgeslagen.        & https://www.bol.com/nl/p/ philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE\&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123\& utm\_source=51123\&utm\_medium=Afﬁliates\&utm\_campaign=CPS\&utm\_content=txl \\
+		GSM HAT             & 46.61        & Dit zorgt voor online communicatie om de data door te sturen.       & https://www.robotshop.com/eu/ en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html                                                                                                                                                     \\
+		5V Battery          & 54.95        & Hierdoor kan de proof of concept draadloos werken.                  & https://www.sossolutions.nl/1566-usb-battery-pack-for-raspberry-pi-10000mah-2-x-5v-outputs?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VfLwMiBk7S2IyG0X13mIPVppguIaRPsgBf2mtAYpxLGU7K8PmdalmRoCbZgQAvD\_BwE                                    \\
+		GPS HAT             & 39.95        & Een meer accurate lokatiebepaling in vergelijking met AGPS.         & https://www.sossolutions.nl/raspberry-pi-gps-hat?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VZeOJ8Gh0lykmCo9hwT2Zn5j8bvYHn\_mQX2lXPTCSkvUFwH6F3qQexoCutYQAvD\_BwE                                                                             \\
+		Totale kost:        & \textbf{178.30}        &                                                                     &                                                                                                                                                                                                                                 
+	\end{tabular}
+\caption{Prijs opstelling Raspberry Pi}
+\label{tab:rpi}
+\end{table}
+
 \subsection{\IfLanguageName{dutch}{Arduino}{Arduino}}
-Naast de Raspberry Pi is er de mogelijkheid om gebruik te maken van een Arduino. Arduino heeft een module die geprogrammeerd kan worden om te voldoen aan alle eisen, namelijk de MKR 1400 GSM module. (Zie figuur: \ref{fig:mkr1400}) Deze component kan zijn locatie bepalen aan de hand van GPRS-triangulatie en doorsturen via sms of roaming doordat het toegang heeft tot het GPRS netwerk. De kit heeft een kostprijs van 80,35 euro \autocite{arduino}. In deze kit is er ook een simkaart bijgeleverd die de eerste 90 dagen geldig blijft.
+Naast de Raspberry Pi is er de mogelijkheid om gebruik te maken van een Arduino. Arduino heeft een module die geprogrammeerd kan worden om te voldoen aan alle eisen, namelijk de MKR 1400 GSM module. (Zie figuur: \ref{fig:mkr1400}) Er zijn uiteraard nog componenten nodig (zie tabel: \ref{tab:arduino}).
+\begin{table}[]
+	\begin{tabular}{llll}
+		Component         & Prijs (euro) & Doel                                                               & Link                                                                     \\
+		MKR GSM           & 80.35        & Dit component runt het script en stuurt de andere componenten aan. & https://store.arduino.cc/arduino-mkr-gsm-1400-1415                       \\
+		MKR GPS Shield    & 41.75        & Een meer accurate lokatiebepaling in vergelijking met AGPS.        & https://store.arduino.cc/arduino-mkr-gps-shield                          \\
+		LiPo 3.7V 2500mAh & 25.90        & Dit zorgt ervoor dat het MKR board draadloos kan werken.           & https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh \\
+		Totale kost:      & \textbf{148.00}       &                                                                    &                                                                         
+	\end{tabular}
+\caption{Prijs opstelling Arduino}
+\label{tab:arduino}
+\end{table}
+
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mkr1400gsm.png}
     %https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA
     \caption{\href{https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA}{Arduino MKR 1400 GSM module}}
     \label{fig:mkr1400}
 \end{figure}
-\newline
-Naast de MKR 1400 GSM module kan er ook gebruik gemaakt worden van een MKR GPS Shield (41,75 euro) die past op het MKR bord. Indien eu5ir gebruik gemaakt wordt van beide modules, zal de accuraatheid van de positiebepaling veel beter zijn dan simpelweg GPRS (\ref{sec:Locatiebepaling-technologieën}). Als laatste is er ook nood aan een lithium polymeer (LiPo) batterij. Deze batterijen worden ook gebruikt voor gsm's, laptops en tablets. Specifiek (om compatibel te zijn met het MKR module) gaat het om een 3.7V 2500mAh LiPo batterij met een kostprijs van 25,90 euro.(de prijzen zijn geraadpleegd op: \url{https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh?gclid=CjwKCAiA-vLyBRBWEiwAzOkGVKAFfQbZQ7EKO4Ke1SrnX2-U1CqiAo-g8MHoKe-CbwRulcD3-6JbVxoCe3kQAvD_BwE}).
-\newline
-De totale kostprijs zou komen op 148 euro (exclusief casing). Dit valt nog altijd lager uit dan de kost van een lawinepieper en een surfboard tracker.
-\subsection{Proof of concept}
-De proof of concept bestaat uit de MKR 1400 GSM Module met een MKR GPS Shield. Deze optie is gekozen, omdat het goedkoop en klein is. Ook heeft de MKR 1400 GSM module (microcontroller) een beter batterijverbruik ten opzichte van de Raspberry Pi (computer).
-\newline
-De kleine schaal van de MKR 1400 GSM module is een goede reden om dit te gebruiken voor de proof of concept. Hierdoor kan er een robuuste, duurzame en waterbestendige casing gemaakt worden. De casing zou geprint worden met behulp van een 'Anycubic 3D' printer. Zo is er de mogelijkheid om een volledig eigen ontwerp te gebruiken zoals een vin op een surfboard (GPS-ontvanger) of een binding op een snowboard (lawinepieper). Het filament dat gebruikt zou worden is nylon of PETG. Beide voldoen aan de eisen van de casing.

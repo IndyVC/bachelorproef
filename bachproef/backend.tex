@@ -1,2 +1,28 @@
 \chapter{\IfLanguageName{dutch}{Backend}{Backend}}
 \label{ch:backend}
+
+\section{\IfLanguageName{dutch}{Ontwikkeling}{Development}}
+Voor backend is er gebruik gemaakt van \href{URL}{text}. De gehele infrastructuur is gebaseerd op de MEVN stack.
+Deze stack staat voor:
+\begin{itemize}
+	\item Mongoose
+	\item Express
+	\item Vue
+	\item Node.JS
+\end{itemize}
+Mongoose maakt gebruik van \href{https://www.mongodb.com/cloud/atlas}{MongoDB Atlas}. De backend, geschreven in Javascript, is opensource en staat online op \href{https://github.com/IndyVC/bap-backend}{een github repository}.
+\newline
+De functie van de backend is het ontvangen van locaties van de proof of concept zoals beschreven in hoofdstuk \ref{ch:proof-of-concept}. Deze locaties worden opgeslagen in de NO-SQL database en houdt de volgende informatie bij per locatie:
+\begin{itemize}
+	\item longitude
+	\item latitude
+	\item altitude
+	\item snelheid (in km/h)
+	\item aantal satellieten
+	\item method (locatie bepaalt via GPS of AGPS)
+\end{itemize}
+De methode hangt af van de beschikbaarheid van het signaal. Indien er geen GPS-signaal gevonden kan worden, schakelt de proof of concept vanzelf over op AGPS. Maar GPS blijft wel de eerste keus omdat dit accurater is dan AGPS. Indien de lokatie bepaalt is via AGPS, zullen de velden snelheid en aantal satellieten leeg zijn. Dit komt omdat AGPS data van gsm-masten gebruikt (zie hoofdstuk \ref{ch:stand-van-zaken}). De lokatie wordt dan niet bepaalt door satellieten, het is slechts een schatting. 
+
+\section{\IfLanguageName{dutch}{Deployment}{Deployment}}
+Naast de code staat ook het programma online. De backend kan \href{https://indy-bap-backend.herokuapp.com/api/locations}{hier} bekeken worden. Voor de deployment is er gebruik gemaakt van \href{www.heroku.com}{heroku}. Doordat het programma online draait, kan de \href{https://indy-bap-frontend.netlify.com/}{webapplicatie} deze data ophalen en weergeven.
+ 

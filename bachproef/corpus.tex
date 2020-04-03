@@ -14,7 +14,7 @@ De uitgewerkte proof of concept (zie figuur:\ref{fig:opstelling_arduino}) is opg
 De totale kost van de proof of concept komt neer op \textbf{148.00 euro}. Naast de lage kost heeft de proof of concept de mogelijkheid om zelf volledig geconfigureerd te worden. De configuratie is gebeurd in de editor van Arduino zelf. Het script is in staat om de volgende functies uit te voeren:
 \begin{itemize}
 	\item De locatie bepalen aan de hand van GPS;
-	\item De locatie bepalen aan de hand van AGPS;
+	\item De locatie bepalen aan de hand van GPRS;
 	\item De locatie doorsturen naar een REST API aan de hand van een POST request (JSON).
 \end{itemize}
 Het script is nieuw ontwikkeld en staat opensource op \href{https://github.com/IndyVC/bap-arduino}{een github repository}. In het script werd gebruik gemaakt van verscheidene libraries om het traceren mogelijk te maken.
@@ -61,9 +61,9 @@ De functie van de backend is het ontvangen van locaties van de proof of concept.
 	\item altitude
 	\item snelheid (in km/h)
 	\item aantal satellieten
-	\item method (locatie bepaalt via GPS of AGPS)
+	\item method (locatie bepaalt via GPS of GPRS)
 \end{itemize}
-De methode hangt af van de beschikbaarheid van het signaal. Indien er geen GPS-signaal gevonden kan worden, schakelt de proof of concept vanzelf over op AGPS. Maar GPS blijft wel de eerste keus omdat dit accurater is dan AGPS. Indien de lokatie bepaalt is via AGPS, zullen de velden snelheid en aantal satellieten leeg zijn. Dit komt doordat AGPS data van gsm-masten gebruikt (zie hoofdstuk \ref{ch:stand-van-zaken}). De lokatie wordt dan niet bepaald door satellieten, maar baseerd zicht op data van gsm-masten (schatting). 
+De methode hangt af van de beschikbaarheid van het signaal. Indien er geen GPS-signaal gevonden kan worden, schakelt de proof of concept vanzelf over op GPRS. Maar GPS blijft wel de eerste keus omdat dit accurater is dan GPRS. Indien de lokatie bepaalt is via GPRS, zullen de velden snelheid en aantal satellieten leeg zijn. Dit komt doordat GPRS data van gsm-masten gebruikt (zie hoofdstuk \ref{ch:stand-van-zaken}). De lokatie wordt dan niet bepaald door satellieten, maar baseerd zicht op data van gsm-masten. 
 
 \subsection{\IfLanguageName{dutch}{Deployment}{Deployment}}
 Naast de code staat ook het programma online. De backend kan \href{https://indy-bap-backend.herokuapp.com/api/locations}{\underline{hier}} bekeken worden. Voor de deployment is er gebruik gemaakt van \href{www.heroku.com}{heroku}. Doordat het programma online draait, kan de \href{https://indy-bap-frontend.netlify.com/}{webapplicatie} deze data ophalen en weergeven.

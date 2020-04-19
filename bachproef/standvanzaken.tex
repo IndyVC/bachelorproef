@@ -7,7 +7,7 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 \section{\IfLanguageName{dutch}{Global Positioning System (GPS)}{Global Positioning System (GPS)}}
-Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn er heel wat verschillen. Als er gesproken wordt over GPS, wordt er impliciet NAVSTAR bedoeld. Dit eerste operationele GPS-systeem had oorspronkelijk enkel militaire toepassingen. Het is ontwikkeld door de 'United States Air Force'. \autocite{gnss}  Later is NAVSTAR toegankelijk gemaakt voor de gewone gebruiker. In deze sectie wordt toegelicht welke de verschillende systemen zijn en welke gebruikt kunnen worden.
+Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn er heel wat verschillen. Als er gesproken wordt over GPS, wordt er impliciet NAVSTAR bedoeld.\autocite{gps} Dit eerste operationele GPS-systeem had oorspronkelijk enkel militaire toepassingen. Het is ontwikkeld door de 'United States Air Force'. \autocite{gnss}  Later is NAVSTAR toegankelijk gemaakt voor de gewone gebruiker. In deze sectie wordt toegelicht welke de verschillende systemen zijn en welke gebruikt kunnen worden.
 
 \subsection{\IfLanguageName{dutch}{De werking van GPS}{How GPS works}}
 \begin{figure}
@@ -23,7 +23,7 @@ Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn e
 	\label{fig:satelliet}
 \end{figure}
 
-Om een locatie te bepalen zijn er 3 zaken nodig:
+Het doel van een GPS is om te navigeren. Daarvoor moet de locatie heel nauwkeurig bepaald worden. Hiervoor zijn drie zaken nodig:
 \begin{itemize}
 	\item Grondstation, deze zijn ontworpen voor buitenplanetaire draadloze communicatie. Ze communiceren door het ontvangen en verzenden van radiogolven met zeer hoge frequentie. (Zie figuur: \ref{fig:groundstation})
 	\item Een satelliet, of ook vaak kunstmaan genoemd, is een object dat zich in een baan om een hemellichaam bevindt. \autocite{definitie_satelliet} (Zie figuur: \ref{fig:satelliet})
@@ -33,10 +33,10 @@ Om een locatie te bepalen zijn er 3 zaken nodig:
 De grondstations worden gebruikt om de locatie bij te houden van de GPS-satellieten. Deze stations worden niet gebruikt voor het bepalen van de huidige locatie van een gebruiker. 
 \newline
 \newline
-De GPS-satellieten zenden een signaal uit die de afstand en tijd bevat. Deze tijd wordt berekend met een klok aan boord. Een kwartskristal klok kan na 6 weken een volledige milliseconde afwijken van de werkelijke tijd, wat zeer gevaarlijk is voor ruimteverkeer. Hierdoor maken satellieten gebruik van een ander type klok, de atoomklok. Atoomklokken zijn een 'verbetering' ten opzichte van de kwartskristal klok.  Na 10 jaar wijkt een atoomklok slechts een microseconde af, wat stabieler is in vergelijking met de kwartskristal klok. Alles moet stabiel blijven voor ruimtevaartmisies, waardoor de afwijking van de atoomklok dagelijks gecorrigeerd wordt. \autocite{atomic_clock}
+De GPS-satellieten zenden een signaal uit die de afstand en tijd bevat. Deze tijd wordt berekend met een klok aan boord. Een kwartskristalklok kan na 6 weken een volledige milliseconde afwijken van de werkelijke tijd, wat zeer gevaarlijk is voor ruimteverkeer. Hierdoor maken satellieten gebruik van een ander type klok, de atoomklok. Atoomklokken zijn een 'verbetering' ten opzichte van de kwartskristal klok.  Na 10 jaar wijkt een atoomklok slechts een microseconde af, wat stabieler is in vergelijking met de kwartskristal klok. Alles moet stabiel blijven voor ruimtevaartmisies, waardoor de afwijking van de atoomklok dagelijks gecorrigeerd wordt. \autocite{atomic_clock}
 \newline
 Als de GPS-ontvanger de tijd en afstand uit het signaal heeft kunnen afleiden, kan het aan de hand van triangulatie zijn locatie bepalen. (Zie figuur: \ref{fig:triangulatie})
-Per satelliet wordt een radius bepaald. Hiervoor zijn minstens drie satellieten nodig. De overlapping van de radiussen bepalen één punt, de locatie van de GPS-ontvanger. Soms kan dit niet accuraat gebeuren, waarbij de radius van een vierde satelliet kan helpen. De laatste radius sluit dan foute mogelijkheden uit waardoor de locatie accurater is. Kortom, hoe meer satellieten, hoe beter de locatiebepaling gebeurt. 
+Per satelliet wordt een radius bepaald. Hiervoor zijn minstens drie satellieten nodig. De overlapping van de radiussen bepalen één punt, de locatie van de GPS-ontvanger. Soms kan dit niet accuraat gebeuren, waarbij de radius van een vierde satelliet kan helpen. De laatste radius sluit dan foute mogelijkheden uit waardoor de locatie accurater is. Er is met andere woorden een positieve correlatie tussen het aantal satellieten dat gebruikt wordt en de nauwkeurigheid van de locatiebepaling. \autocite{gps}
 
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie.jpg}
@@ -46,7 +46,7 @@ Per satelliet wordt een radius bepaald. Hiervoor zijn minstens drie satellieten 
 \end{figure} 
 \pagebreak
 \subsection{\IfLanguageName{dutch}{Global Navigation Satellite Systems (GNSS)}{Global Navigation Satellite Systems (GNSS)}}
-Als we spreken over het bepalen van een locatie, gebruiken we systematisch de term 'GPS'. Dit is echter niet correct, want er bestaan veel meer technologieën en systemen die hierbij helpen. Deze technologieën worden besproken in dit hoofdstuk.
+Als er gesproken wordt over het bepalen van een locatie, gebruiken we systematisch de term 'GPS'. \autocite{gnss} Dit is echter niet correct, want er bestaan veel meer technologieën en systemen die hierbij helpen. Deze technologieën worden besproken in dit hoofdstuk.
 \newline
 Het 'Global Positioning System' is een 'ruimte gebaseerd' navigatiesysteem dat eigendom is van de Verenigde Staten en bestuurd wordt door de 'United States Air Force' (USAF). Officieel heet dit systeem 'Navigation Satellite Time And Ranging' (NAVSTAR). De allereerste versie werd gelanceerd in 1978 en in 1995 werd het operationeel verklaard. GPS is in staat om een ongelimiteerd gebruikers met een GPS-ontvanger te voorzien van hun locatie op ieder moment van de dag, onafhankelijk van het weer en over de hele wereld. \autocite{gps}
 \newline
@@ -71,7 +71,7 @@ Er zijn verschillen tussen tussen deze Global Navigation Satellite Systems, name
 		QZSS    & 7                           & 1 - 0,01 meter                                                                       
 	\end{tabular}
 \label{tab:GNSS-vergelijking}
-\caption{tabel die een vergelijking geeft van alle Global Navigation Satellite Systems}
+\caption{Overzicht Global National Satellite Systems}
 \autocite{gnss}
 \end{table}
 \newline
@@ -79,11 +79,12 @@ De reden voor het bestaan van deze verschillende systemen is van politieke aard.
 
 \section{Verschillende Locatiebepaling-technologieën}
 \label{sec:Locatiebepaling-technologieën}
-Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Iedere optie wordt in deze sectie besproken.
+Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan.
+
 \subsection{\IfLanguageName{dutch}{Standard Positioning Service (SPS)}{Standard Positioning Service (SPS)}}
 De 'Standard Positioning Service' (SPS) is een positionerings- en timingdienst die signalen broadcast op de GPS L1-frequentie. Deze frequentie, die gebruikt wordt door alle  \mbox{NAVSTAR} GPS-satellieten, zorgt ervoor dat GPS vrij te gebruiken is voor iedereen. \autocite{gps}
 \newline
-Deze vorm van GPS is vrij accuraat, maar presteert minder in vergelijking met het 'Precision Positioning Service'. 
+Deze vorm van GPS minder accuraat in vergelijking met het 'Precision Positioning Service'. 
 \subsection{\IfLanguageName{dutch}{Precision Positioning Service (PPS)}{Precision Positioning Service (PPS)}}
 De 'Precision Positioning Service' (PPS) is een  positionerings- en timingdienst die signalen broadcast op de GPS L1 en L2 frequenties. Het functioneert hetzelfde als SPS, maar hierbij wordt er ook gebruik gemaakt van een precisiecode (P) die alleen beschikbaar is voor geautoriseerde gebruikers. Hiermee wordt voornamelijk het Amerikaans leger en zijn allianties bedoeld. \autocite{pps} Voor september 2007 werd er gebruik gemaakt van 'Selective Availability' (SA). Zo kon het leger van de Verenigde Staten de accuraatheid bewust degraderen voor veiligheidsredenen. De nieuwere GPS III-satellieten zouden niet meer uitgerust zijn met de SA-functie. 
 \newline
@@ -111,14 +112,13 @@ Door het beperkt aantal referentiestations kan deze methode niet geïmplementeer
 \subsection{\IfLanguageName{dutch}{Assisted Global Positioning System (A-GPS)}{Assisted Global Positioning System (A-GPS)}}
 Een GPS-toestel kan er enkele minuten over doen om een locatie te bepalen. Deze verloren tijd heet 'Time To First Fix' (TTFF). De duur van deze TTFF hangt af van de exacte locatie en storing. Een open veld zal een kleinere TTFF hebben dan een bebouwde oppervlakte. Assisted Global Positioning (AGPS/A-GPS/aGPS) verkleint de TTFF. 
 \newline
-Gsm masten hebben GPS-ontvangers die voortdurend informatie van GPS-satellieten verzamelen. Op deze informatie worden allerlei bewerkingen uitgevoerd en vervolgens opgeslagen in een database. Dit heeft enkele voordelen voor de gsm die zijn locatie probeert te bepalen:
+Gsm-masten hebben GPS-ontvangers die voortdurend informatie van GPS-satellieten verzamelen. Op deze informatie worden allerlei bewerkingen uitgevoerd en vervolgens opgeslagen in een database. Dit heeft enkele voordelen voor de gsm die zijn locatie probeert te bepalen:
 \begin{itemize}
 	\item Snellere locatie bepaling;
 	\item Minder computerkracht nodig;
 	\item Minder batterijverbruik;
 	\item Mogelijkheid om de locatie indoor te bepalen.
 \end{itemize} 
-Andere voordelen zijn de hogere accuraatheid (5-50 meter) en er zijn slechts twee waarneembare GPS-satellieten nodig.
 Opmerkelijk is dat de accuraatheid minder goed is in vergelijking met het zelf bepalen van de locatie (Zie: \ref{tab:GNSS-vergelijking}). Er zullen field tests en metingen worden uitgevoerd om deze stellingen te controleren. \autocite{agps}
 \subsection{\IfLanguageName{dutch}{Advanced Mobile Location (AML)}{Advanced Mobile Location (AML)}}
 Tot nu toe was er nog geen enkele techniek die een exacte locatie kon bepalen. 'Advanced Mobile Location' (AML) is de nieuwste (open source) techniek die hiervoor een oplossing biedt. Het maakt gebruik van:
@@ -127,9 +127,9 @@ Tot nu toe was er nog geen enkele techniek die een exacte locatie kon bepalen. '
 	\item Sms
 	\item GNSS
 \end{itemize}
-Door gebruik te maken van bovenstaande positioneringstechnieken is het de meest accurate en tegelijkertijd de traagste methode van alle besproken methodes. 
+Door gebruik te maken van deze positioneringstechnieken is het de meest accurate en tegelijkertijd de traagste methode van alle besproken methodes. 
 \newline
-Deze methode wordt gebruikt bij noodtelfoon oproepen. Bij het begin van het bellen wordt er eerst gekeken of de wifi en GPS aanstaat. Als de 'battery check' positief is, worden deze services automatisch geactiveerd. 
+Deze methode wordt gebruikt bij telefonische noodoproepen. Bij het begin van het bellen wordt er eerst gekeken of de wifi en GPS aanstaat. Als de 'battery check' positief is, worden deze services automatisch geactiveerd. 
 \newline
 AML gaat parallel zijn locatie proberen bepalen aan de hand van wifi, sms en GNSS, zodat het zo min mogelijk tijd verliest om de beller te lokaliseren. De locatiebepaling gebeurt aan de hand van een geprioritiseerde rij. Indien GNSS als eerste de locatie kan bepalen wordt deze als eerste verzonden naar de hulpdiensten. 
 Als tweede optie wordt de locatie bepaald met behulp van wifi. Hierbij wordt de locatie gebaseerd op wifi 'Service Set Identifiers' (SSIDs) of MAC-adressen van access points waarmee de gsm verbonden is. Als laatste optie wordt de cel ID verstuurd van de mast waarmee de beller verbonden is. Indien men geen locatie kan bepalen, wordt er een sms verstuurd dat alle positioneringstechnieken (wifi, GNSS, cel ID) gefaald hebben.
@@ -152,7 +152,7 @@ De proof of concept moet blijven functioneren in ongunstige omstandigheden, zoal
 \subsection{\IfLanguageName{dutch}{Water}{Water}}
 Het grootste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor mobiel netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het wordt toegepast op surfboards. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
 \subsection{\IfLanguageName{dutch}{Sneeuw}{Snow}}
-In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal dat passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, breking, multipad en vervagen. (Zie figuur:\ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor het (L1 band) GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in de sneeuw. Bijvoorbeeld een GPS-signaal kan tot 400 meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarbij het volumepercentage meer dan 1\% bedraagt kan het GPS-signaal slechts 3 meter diep doordringen.\autocite{avalanche_gps} Hieruit wijst dat de proof of concept wellicht eveneens kan dienen als een lawinepieper. 
+In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal dat passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, breking, multipad en vervagen. (Zie figuur:\ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor het (L1 band) GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in de sneeuw. Een GPS-signaal kan bijvoorbeeld tot vierhonderd meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarbij het volumepercentage meer dan 1\% bedraagt kan het GPS-signaal slechts 3 meter diep doordringen.\autocite{avalanche_gps}
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avalanche.png}
     %https://www.researchgate.net/figure/Signal-Paths-in-Avalanche-Debris_fig1_253280455

@@ -4,7 +4,7 @@
 \section{\IfLanguageName{dutch}{Proof of concept}{Proof of concept}}
 \label{ch:proof-of-concept}
 
-Voor de proof of concept is de arduino gekozen wegens dit een microcontroller is. Microcontrollers zijn zuiniger qua stroomgebruik ten opzichte van een 'computer' (Raspberry Pi). Hierdoor zal de arduino langer meegaan op batterij. Naast het verbruik is het eveneens goedkoper (zie hoofdstuk \ref{ch:stand-van-zaken}).
+Voor de proof of concept is de arduino gekozen omdat dit een microcontroller is. Microcontrollers zijn zuiniger qua stroomgebruik ten opzichte van een 'computer' (Raspberry Pi). Hierdoor heeft de arduino een langere batterijduur. Naast het verbruik is het eveneens goedkoper (zie hoofdstuk \ref{ch:stand-van-zaken}).
 
 \subsection{\IfLanguageName{dutch}{Opstelling proof of concept}{Setup proof of concept}}
 De \textbf{uitgewerkte proof of concept} (zie figuur:\ref{fig:opstelling_arduino}) is opgesteld uit:
@@ -56,7 +56,7 @@ Deze stack staat voor:
 \end{itemize}
 Mongoose maakt gebruik van \href{https://www.mongodb.com/cloud/atlas}{MongoDB Atlas}. De backend, geschreven in Javascript, is opensource en staat online op \href{https://github.com/IndyVC/bap-backend}{een github repository}.
 \newline
-De backend heeft als functie het ontvangen van locaties van de proof of concept. Deze locaties worden opgeslagen in een NO-SQL database en houdt de volgende informatie bij per locatie:
+De backend heeft als functie het ontvangen van locaties van de proof of concept. Deze locaties worden opgeslagen in een NO-SQL database. De database slaagt per locatie de volgende gegevens op:
 \begin{itemize}
 	\item Longitude
 	\item Latitude
@@ -65,7 +65,7 @@ De backend heeft als functie het ontvangen van locaties van de proof of concept.
 	\item Aantal satellieten
 	\item Method (locatie bepaalt via GPS of GPRS)
 \end{itemize}
-De methodiek hangt af van de beschikbaarheid van het signaal. Indien er geen GPS-signaal gevonden kan worden, schakelt de proof of concept automatisch over op GPRS. Maar GPS blijft wel de eerste keus omdat dit accurater is dan GPRS. Indien de lokatie bepaald is via GPRS, zullen de velden snelheid en het aantal satellieten leeg zijn. Dit komt doordat GPRS data van gsm-masten gebruikt (zie hoofdstuk \ref{ch:stand-van-zaken}). De locatie wordt dan niet bepaald door satellieten, maar baseert zicht op data van gsm-masten. 
+De methodiek hangt af van de beschikbaarheid van het signaal. Indien er geen GPS-signaal gevonden kan worden, schakelt de proof of concept automatisch over op GPRS. Maar GPS blijft wel de eerste keus omdat dit accurater is dan GPRS. Indien de lokatie bepaald is via GPRS, zal de snelheid en het aantal satellieten leeg zijn. Dit komt doordat GPRS data van gsm-masten gebruikt (zie hoofdstuk \ref{ch:stand-van-zaken}). De locatie wordt dan niet bepaald door satellieten, maar baseert zicht op data van gsm-masten. 
 
 \subsection{\IfLanguageName{dutch}{Deployment}{Deployment}}
 Naast de code staat ook het programma online. De backend kan \href{https://indy-bap-backend.herokuapp.com/api/locations}{\underline{hier}} bekeken worden. Voor de deployment is er gebruik gemaakt van \href{www.heroku.com}{Heroku}. Doordat het programma online draait, kan de \href{https://indy-bap-frontend.netlify.com/}{webapplicatie} deze data ophalen en weergeven.
@@ -76,11 +76,11 @@ De backend maakt gebruik van een gratis hosting plan, dat kan nadelig zijn. Het 
 \label{ch:frontend}
 
 \subsection{\IfLanguageName{dutch}{Ontwikkeling}{Development}}
-Zoals reeds verteld is er gebruik gemaakt van de MEVN stack. Dit wil zeggen dat de webapplicatie ontwikkeld is in Vue, een nieuwer javascript-framework. De code van deze webapplicatie is opensource en staat online op \href{https://github.com/IndyVC/bap-frontend}{een github repository}.
+Zoals reeds verteld is er gebruik gemaakt van de MEVN-stack. Dit wil zeggen dat de webapplicatie ontwikkeld is in Vue, een nieuwer javascript-framework. De code van deze webapplicatie is opensource en staat online op \href{https://github.com/IndyVC/bap-frontend}{een github repository}.
 \newline
-Voor de webapplicatie (zie figuur: \ref{fig:webapplicatie}) is er gebruik gemaakt van 'Google Maps'. Google Maps is een populaire online kaartendienst waarmee geografische locaties kunnen opgezocht worden waardoor dezelfde layout een vorm van betrouwbaarheid en herkenbaarheid geeft. Hierdoor is de webapplicatie gebruiksvriendelijk. Naast het tracken zelf, geeft het ook extra informatie weer, zoals welke methode gebruikt wordt, hoe snel de GPS-tracker zich voortbeweegt en hoe betrouwbaar de coördinaten zijn (aantal satellieten). De gebruiker kan de geschiedenis van de locaties wissen via een knop.
+Voor de webapplicatie (zie figuur: \ref{fig:webapplicatie}) is er gebruik gemaakt van 'Google Maps'. Google Maps is een populaire online kaartendienst waarmee geografische locaties kunnen opgezocht worden waardoor dezelfde layout een vorm van betrouwbaarheid en herkenbaarheid geeft. Dit bevordert de gebruiksvriendelijkheid van de webapplicatie. Naast het tracken zelf, geeft het ook extra informatie weer, zoals welke methode gebruikt wordt, hoe snel de GPS-tracker zich voortbeweegt en hoe betrouwbaar de coördinaten zijn (aantal satellieten). De gebruiker kan de geschiedenis van de locaties wissen via een knop.
 \newline
-Om de implementatie van Google Maps is er gebruik gemaakt van een opensource en gratis te gebruiken library, namelijk \href{https://www.npmjs.com/package/vue2-google-maps}{vue2-google-maps}.
+Voor de implementatie van Google Maps is er gebruik gemaakt van een opensource en gratis te gebruiken library, namelijk \href{https://www.npmjs.com/package/vue2-google-maps}{vue2-google-maps}.
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{webapplicatie.png}
 	\caption{Webapplicatie}
@@ -88,4 +88,4 @@ Om de implementatie van Google Maps is er gebruik gemaakt van een opensource en 
 \end{figure}
 
 \subsection{\IfLanguageName{dutch}{Deployment}{Deployment}}
-Voor de website online te zetten is er gebruik gemaakt van Netlify. \href{https://www.netlify.com/}{Netlify} is een hosting bedrijf dat een gratis plan aanbiedt. De webapplicatie staat \href{https://indy-bap-frontend.netlify.com/}{\underline{hier}} online.
+Om de website online te zetten is er gebruik gemaakt van Netlify. \href{https://www.netlify.com/}{Netlify} is een hosting bedrijf dat een gratis plan aanbiedt. De webapplicatie staat \href{https://indy-bap-frontend.netlify.com/}{\underline{hier}} online.

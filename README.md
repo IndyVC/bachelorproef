@@ -1,10 +1,10 @@
 # Bachelorproef toegepaste informatica
 
-Afgewerkt: Inleiding + Literatuurstudie.
+Afgewerkt: Inleiding + Literatuurstudie + webapplicatie + backend + proof of concept.
 
-Status: Wachtende op feedback voor inleiding + literatuurstudie (6 maart). Proof of concept (hardware) is volledig af, inclusief scripts. Backend is ook volledig opgezet en gedeployed. 
+Status: Proof of concept (hardware) is volledig af, inclusief scripts. Backend is ook volledig opgezet en gedeployed. 
 
-Momenteel: Bezig met front-end applicatie voor de GPS-tracker.
+Momenteel: Maken van casing proof of concept + eerste field test
 
 Repository script proof of concept:https://github.com/IndyVC/bap-arduino
 

@@ -25,7 +25,7 @@ Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn e
 
 Het doel van een GPS is om te navigeren. Daarvoor moet de locatie heel nauwkeurig bepaald worden. Hiervoor zijn drie zaken nodig:
 \begin{itemize}
-	\item Grondstation, deze zijn ontworpen voor buitenplanetaire draadloze communicatie. Ze communiceren door het ontvangen en verzenden van radiogolven met zeer hoge frequentie. (Zie figuur: \ref{fig:groundstation})
+	\item Grondstation, deze zijn ontworpen voor buitenplanetaire\footnote[1]{De ruimte buiten onze planeet} draadloze communicatie. Ze communiceren door het ontvangen en verzenden van radiogolven met zeer hoge frequentie. (Zie figuur: \ref{fig:groundstation})
 	\item Een satelliet, of ook vaak kunstmaan genoemd, is een object dat zich in een baan om een hemellichaam bevindt. \autocite{definitie_satelliet} (Zie figuur: \ref{fig:satelliet})
 	\item GPS-ontvanger, dit ontvangt de elektromagnetische signalen van de satellieten.
 \end{itemize}
@@ -33,7 +33,7 @@ Het doel van een GPS is om te navigeren. Daarvoor moet de locatie heel nauwkeuri
 De grondstations worden gebruikt om de locatie bij te houden van de GPS-satellieten. Deze stations worden niet gebruikt voor het bepalen van de huidige locatie van een gebruiker. 
 \newline
 \newline
-De GPS-satellieten zenden een signaal uit die de afstand en tijd bevat. Deze tijd wordt berekend met een klok aan boord. Een kwartskristalklok kan na 6 weken een volledige milliseconde afwijken van de werkelijke tijd, wat zeer gevaarlijk is voor ruimteverkeer. Hierdoor maken satellieten gebruik van een ander type klok, de atoomklok. Atoomklokken zijn een 'verbetering' ten opzichte van de kwartskristal klok.  Na 10 jaar wijkt een atoomklok slechts een microseconde af, wat stabieler is in vergelijking met de kwartskristal klok. Alles moet stabiel blijven voor ruimtevaartmisies, waardoor de afwijking van de atoomklok dagelijks gecorrigeerd wordt. \autocite{atomic_clock}
+De GPS-satellieten zenden een signaal uit die de afstand en tijd bevat. Deze tijd wordt berekend met een klok aan boord. Een kwartskristalklok kan na 6 weken een volledige milliseconde afwijken van de werkelijke tijd door temperatuurschommelingen. Dit is gevaarlijk omdat het een grote impact heeft op het opmeten van posities bij snel bewegend ruimtevaartuig. Hierdoor maken satellieten gebruik van een ander type klok, de atoomklok. Atoomklokken zijn een 'verbetering' ten opzichte van de kwartskristal klok.  Na 10 jaar wijkt een atoomklok slechts een microseconde af, wat stabieler is in vergelijking met de kwartskristal klok. Alles moet stabiel blijven voor ruimtevaartmisies, waardoor de afwijking van de atoomklok dagelijks gecorrigeerd wordt. \autocite{atomic_clock}
 \newline
 Als de GPS-ontvanger de tijd en afstand uit het signaal heeft kunnen afleiden, kan het aan de hand van triangulatie zijn locatie bepalen. (Zie figuur: \ref{fig:triangulatie})
 Per satelliet wordt een radius bepaald. Hiervoor zijn minstens drie satellieten nodig. De overlapping van de radiussen bepalen één punt, de locatie van de GPS-ontvanger. Soms kan dit niet accuraat gebeuren, waarbij de radius van een vierde satelliet kan helpen. De laatste radius sluit dan foute mogelijkheden uit waardoor de locatie accurater is. Er is met andere woorden een positieve correlatie tussen het aantal satellieten dat gebruikt wordt en de nauwkeurigheid van de locatiebepaling. \autocite{gps}
@@ -79,7 +79,7 @@ De reden voor het bestaan van deze verschillende systemen is van politieke aard.
 
 \section{Verschillende Locatiebepaling-technologieën}
 \label{sec:Locatiebepaling-technologieën}
-Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan.
+Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Er is onderzoek gedaan naar alle locatiebepaling-technologieën om de meest accurate technologie te bepalen die gebruikt kan worden door de proof of concept. Naast de accuraatheid moet ook de locatiebepaling op zoveel mogelijk plaatsen succesvol werken zodat de proof of concept kan dienen als lawinepieper in de bergen of als GPS-tracker aan een kust.
 
 \subsection{\IfLanguageName{dutch}{Standard Positioning Service (SPS)}{Standard Positioning Service (SPS)}}
 De 'Standard Positioning Service' (SPS) is een positionerings- en timingdienst die signalen broadcast op de GPS L1-frequentie. Deze frequentie, die gebruikt wordt door alle  \mbox{NAVSTAR} GPS-satellieten, zorgt ervoor dat GPS vrij te gebruiken is voor iedereen. \autocite{gps}
@@ -150,7 +150,7 @@ Het gebruik van deze techniek is echter veel minder accuraat. Volgens \cite{gprs
 \section{\IfLanguageName{dutch}{Ongunstige omstandigheden}{Unfavorable circumstances}}
 De proof of concept moet blijven functioneren in ongunstige omstandigheden, zoals sneeuw en water. Het moet in staat zijn om te functioneren als GPS-ontvanger op een surfboard en als lawinepieper. In deze sectie wordt onderzocht aan welke voorwaarden de proof of concept moet voldoen.
 \subsection{\IfLanguageName{dutch}{Water}{Water}}
-Het grootste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor mobiel netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het wordt toegepast op surfboards. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
+Het grootste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor het mobiele netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het aan de zijkant van een surfboard wordt gemonteerd. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
 \subsection{\IfLanguageName{dutch}{Sneeuw}{Snow}}
 In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal dat passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, breking, multipad en vervagen. (Zie figuur:\ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor het (L1 band) GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in de sneeuw. Een GPS-signaal kan bijvoorbeeld tot vierhonderd meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarbij het volumepercentage meer dan 1\% bedraagt kan het GPS-signaal slechts 3 meter diep doordringen.\autocite{avalanche_gps}
 \begin{figure}
@@ -160,59 +160,3 @@ In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw t
     \label{fig:avalanche}
 \end{figure}
 \pagebreak
-\section{\IfLanguageName{dutch}{Toestellen}{Devices}}
-Voor de proof of concept werd er goed nagedacht welke Locatiebepaling-technologieën gebruikt kunnen worden. Het moet niet enkel functioneren in ideale omstandigheden, maar ook in ongunstige. Er moet ook voldaan worden aan de volgende vereisten:
-\begin{itemize}
-    \item Mogelijkheid tot het bepalen van de locatie;
-    \item Mogelijkheid tot het delen van de locatie via sms;
-    \item Mogelijkheheid tot het delen van de locatie via roaming;
-    \item Mogelijkheid om te werken op batterij;
-    \item Mogelijkheid tot waterdichtheid;
-    \item Zo goedkoop mogelijk blijven.
-\end{itemize}
-Naast deze eisen moet de batterijduur zo lang mogelijk meegaan en de locatiebepaling moet zo accuraat mogelijk zijn.
-\subsection{\IfLanguageName{dutch}{Raspberry Pi}{Raspberry Pi}}
-Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerking komen zijn:
-\begin{itemize}
-    \item Raspberry Pi 4 Model B (39.95 euro);
-    \item Raspberry Pi 3 A+ (26.80 euro);
-    \item Raspberry Pi 3 B+ (39.95 euro);
-    \item Raspberry Pi 3 B (37.95 euro).
-\end{itemize}
-(de prijzen zijn geraadpleegd op: \url{https://www.raspberrypi.org/products})
-\newline
-Naast de Raspberry Pi zijn er nog componenten nodig (zie tabel:\ref{tab:rpi}).
-\begin{table}[]
-	\begin{tabular}{llll}
-		\textbf{Component}           & \textbf{Prijs (euro)} & \textbf{Doel}                                                                & Link                                                                                                                                                                                                                             \\
-		\href{https://www.raspberrypi.org/products}{Raspberry Pi 3A+}    & 26.80        & Het hoofd toestel, draait een besturingssysteem en voert alles aan. & https://www.raspberrypi.org/products                                                                                                                                                                                             \\
-		\href{https://www.bol.com/nl/p/ philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE\&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123\& utm\_source=51123\&utm\_medium=Afﬁliates\&utm\_campaign=CPS\&utm\_content=txl}{SD-kaart (min. 8GB)} & 9.99         & Hierop wordt het besturingssysteem en het script opgeslagen.        & https://www.bol.com/nl/p/ philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE\&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123\& utm\_source=51123\&utm\_medium=Afﬁliates\&utm\_campaign=CPS\&utm\_content=txl \\
-		\href{https://www.robotshop.com/eu/ en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html}{GSM HAT}             & 46.61        & Dit zorgt voor online communicatie om de data door te sturen.       & https://www.robotshop.com/eu/ en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html                                                                                                                                                     \\
-		\href{https://www.sossolutions.nl/1566-usb-battery-pack-for-raspberry-pi-10000mah-2-x-5v-outputs?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VfLwMiBk7S2IyG0X13mIPVppguIaRPsgBf2mtAYpxLGU7K8PmdalmRoCbZgQAvD\_BwE}{5V} Battery          & 54.95        & Hierdoor kan de proof of concept draadloos werken.                  & https://www.sossolutions.nl/1566-usb-battery-pack-for-raspberry-pi-10000mah-2-x-5v-outputs?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VfLwMiBk7S2IyG0X13mIPVppguIaRPsgBf2mtAYpxLGU7K8PmdalmRoCbZgQAvD\_BwE                                    \\
-		\href{https://www.sossolutions.nl/raspberry-pi-gps-hat?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VZeOJ8Gh0lykmCo9hwT2Zn5j8bvYHn\_mQX2lXPTCSkvUFwH6F3qQexoCutYQAvD\_BwE}{GPS HAT}             & 39.95        & Een meer accurate locatiebepaling in vergelijking met AGPS.         & https://www.sossolutions.nl/raspberry-pi-gps-hat?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VZeOJ8Gh0lykmCo9hwT2Zn5j8bvYHn\_mQX2lXPTCSkvUFwH6F3qQexoCutYQAvD\_BwE                                                                             \\
-		Totale kost:        & \textbf{178.30}        &                                                                     &                                                                                                                                                                                                                                 
-	\end{tabular}
-\caption{Prijs opstelling Raspberry Pi}
-\label{tab:rpi}
-\end{table}
-
-\subsection{\IfLanguageName{dutch}{Arduino}{Arduino}}
-Er kan eveneens gebruik gemaakt worden van een Arduino. Arduino heeft een module die geprogrammeerd kan worden om te voldoen aan alle eisen, namelijk de MKR 1400 GSM module. (Zie figuur: \ref{fig:mkr1400}) Er zijn uiteraard nog componenten nodig (zie tabel: \ref{tab:arduino}).
-\begin{table}[]
-	\begin{tabular}{llll}
-		\textbf{Component}         & \textbf{Prijs (euro)} & \textbf{Doel}                                                               & Link                                                                     \\
-		\href{https://store.arduino.cc/arduino-mkr-gsm-1400-1415}{MKR GSM}           & 80.35        & Dit component runt het script en stuurt de andere componenten aan. & https://store.arduino.cc/arduino-mkr-gsm-1400-1415                       \\
-		\href{https://store.arduino.cc/arduino-mkr-gps-shield}{MKR GPS Shield}    & 41.75        & Een meer accurate lokatiebepaling in vergelijking met AGPS.        & https://store.arduino.cc/arduino-mkr-gps-shield                          \\
-		\href{https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh}{LiPo 3.7V 2500mAh} & 25.90        & Dit zorgt ervoor dat het MKR board draadloos kan werken.           & https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh \\
-		Totale kost:      & \textbf{148.00}       &                                                                    &                                                                         
-	\end{tabular}
-\caption{Prijs opstelling Arduino}
-\label{tab:arduino}
-\end{table}
-
-\begin{figure}
-    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mkr1400gsm.png}
-    %https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA
-    \caption{\href{https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA}{Arduino MKR 1400 GSM module}}
-    \label{fig:mkr1400}
-\end{figure}

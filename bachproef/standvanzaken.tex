@@ -41,7 +41,7 @@ Per satelliet wordt een radius bepaald. Hiervoor zijn minstens drie satellieten 
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie.jpg}
 	%https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommunicatiekc.com%2Ftriangulatie%2F&psig=AOvVaw3yrDqiAvEq65KAYiid2aw6&ust=1583063314296000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCKCi68bY9ucCFQAAAAAdAAAAABAD
-	\caption{\href{https://communicatiekc.com/triangulatie/}{Werking triangulatie}}
+	\caption[Werking triangulatie]{\href{https://www.youtube.com/watch?v=QK1lDsinMwk}{Visualisatie hoe triangulatie werkt.}}
 	\label{fig:triangulatie}
 \end{figure} 
 \pagebreak
@@ -79,7 +79,7 @@ De reden voor het bestaan van deze verschillende systemen is van politieke aard.
 
 \section{Verschillende Locatiebepaling-technologieën}
 \label{sec:Locatiebepaling-technologieën}
-Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Er is onderzoek gedaan naar alle locatiebepaling-technologieën om de meest accurate technologie te bepalen die gebruikt kan worden door de proof of concept. Naast de accuraatheid moet ook de locatiebepaling op zoveel mogelijk plaatsen succesvol werken zodat de proof of concept kan dienen als lawinepieper in de bergen of als GPS-tracker aan een kust.
+Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Er is onderzoek gedaan naar alle locatiebepaling-technologieën om de meest accurate technologie te bepalen die gebruikt kan worden door de proof of concept. Naast de accuraatheid moet ook de locatiebepaling op zoveel mogelijk plaatsen succesvol werken zodat de proof of concept gebruikt kan worden als lawinepieper in de bergen of als GPS-tracker aan een kust.
 
 \subsection{\IfLanguageName{dutch}{Standard Positioning Service (SPS)}{Standard Positioning Service (SPS)}}
 De 'Standard Positioning Service' (SPS) is een positionerings- en timingdienst die signalen broadcast op de GPS L1-frequentie. Deze frequentie, die gebruikt wordt door alle  \mbox{NAVSTAR} GPS-satellieten, zorgt ervoor dat GPS vrij te gebruiken is voor iedereen. \autocite{gps}
@@ -94,7 +94,7 @@ Differential Global Positioning System (DGPS) verbetert de accuraatheid van GPS.
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{dgps.png}
 		%https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FComponents-of-a-DGPS-System_fig1_252064818&psig=AOvVaw07YsVmaU9ifoTgAxmkFPSb&ust=1583073831676000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCPCjlt7_9ucCFQAAAAAdAAAAABAD
-	\caption{\href{https://www.researchgate.net/figure/Components-of-a-DGPS-System_fig1_252064818}{Differential Global Positioning System}}
+	\caption[Differential Global Positioning System]{\href{https://www.researchgate.net/figure/Components-of-a-DGPS-System_fig1_252064818}{Na het bepalen van de locatie via satellieten, ontvangt de GPS-ontvanger correcties van een DGPS station}}
 	\label{fig:dgps}
 \end{figure}
 \newline
@@ -106,8 +106,8 @@ Door het beperkt aantal referentiestations kan deze methode niet geïmplementeer
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{geostationair.png}
 	%https://aardrijkskunde.dbz.be/graad3/taken/oefening_satellieten.htm
-	\caption{\href{https://aardrijkskunde.dbz.be/graad3/taken/oefening_satellieten.htm}{Geostationair}}
-	\label{fig:geostationair}
+	\caption[Geostationair]{\href{https://aardrijkskunde.dbz.be/graad3/taken/oefening_satellieten.htm}{De hoogte waarin satellieten zich moeten bevinden om geostationair te zijn}}
+	\label{fig:geostationair} 
 \end{figure}
 \subsection{\IfLanguageName{dutch}{Assisted Global Positioning System (A-GPS)}{Assisted Global Positioning System (A-GPS)}}
 Een GPS-toestel kan er enkele minuten over doen om een locatie te bepalen. Deze verloren tijd heet 'Time To First Fix' (TTFF). De duur van deze TTFF hangt af van de exacte locatie en storing. Een open veld zal een kleinere TTFF hebben dan een bebouwde oppervlakte. Assisted Global Positioning (AGPS/A-GPS/aGPS) verkleint de TTFF. 
@@ -136,13 +136,13 @@ Als tweede optie wordt de locatie bepaald met behulp van wifi. Hierbij wordt de 
 \newline
 In 2020 zijn er wereldwijd slechts 19 landen die AML implementeren. AML kan alleen gebruikt worden bij het bellen van het noodnummer. De proof of concept werkt alleen met een eigen nummer, waardoor AML geen optie is. \autocite{aml} Het nodeloos opbellen van een noodnummer is illegaal.
 \subsection{\IfLanguageName{dutch}{General Packet Radio Service (GPRS)}{General Packet Radio Service (GPRS)}}
-General Packet Radio Service (GPRS) is een totaal andere manier van locatiebepaling. Deze technologie werkt via roaming en vereist geen GPS. Deze verbinding haalt de locatie op van zendmasten, waardoor via triangulatie de locatie kan bepalen (Zie figuur:\ref{fig:triangulatie_gprs}). Deze techniek werkt hetzelfde als GPS.
+General Packet Radio Service (GPRS) is een totaal andere manier van locatiebepaling. Deze technologie werkt via roaming en vereist geen GPS. Deze verbinding haalt de locatie op van gsm-masten, waardoor via triangulatie de locatie bepaalt kan worden (Zie figuur:\ref{fig:triangulatie_gprs}). Deze techniek werkt hetzelfde als GPS.
 \newline
-Het gebruik van deze techniek is echter veel minder accuraat. Volgens \cite{gprs} kan dit variëren van 20 tot 50 meter. Het voordeel aan GPRS is dat het in staat is om via roaming of sms zijn locatie te delen. Het gebruik van sms zorgt ervoor dat de proof of concept op een zeer globale manier gebruikt kan worden. Deze optie is budgetvriendelijker, want sms-en zijn voor providers zo goed als gratis in tegenstelling tot mobiele data. De combinatie van een GPS-ontvanger (ondersteuning voor NAVSTAR, Galileo en GLONASS) en de mogelijkheid tot het versturen van een sms zou zorgen voor een ideale proof of concept. 
+Het gebruik van deze techniek is echter veel minder accuraat zoals weergeven op figuur \ref{fig:triangulatie_gprs}. Volgens \cite{gprs} kan dit variëren van 20 tot 50 meter. Het voordeel aan GPRS is dat het in staat is om via roaming of sms zijn locatie te delen. Het gebruik van sms zorgt ervoor dat de proof of concept op een zeer globale manier gebruikt kan worden. Deze optie is budgetvriendelijker, want sms-en zijn voor providers zo goed als gratis in tegenstelling tot mobiele data. De combinatie van een GPS-ontvanger (ondersteuning voor NAVSTAR, Galileo en GLONASS) en de mogelijkheid tot het versturen van een sms zou zorgen voor een ideale proof of concept. 
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie_gprs.png}
 %https://www.google.com/search?tbs=simg:CAQSrQEJrrLXpgtW1nYaoQELELCMpwgaYgpgCAMSKJkIsBTyEoIDmgiDA5cIgQO5B4gDmj2dPaE0_1zO2J9A2-DP5M8U9yzcaMJJQwz9JWeZp5PeQ91p9B_1t-s-t57GaZYKqFkjHWNDErGPjWTFiDfGTdUPZPzFLx_1SAEDAsQjq7-CBoKCggIARIEyZLpqAwLEJ3twQkaGgoYCgZjaXJjbGXapYj2AwoKCC9tLzAxdmtsDA&sxsrf=ALeKk02ZKs3-33pizx_yPs1LYQ2NzzRrMw:1583058379858&q=trianguleren+mobiel&tbm=isch&sa=X&ved=2ahUKEwjJ_46DiPnnAhWNLewKHREFBhEQwg4oAHoECAcQKA
-    \caption{\href{http://bigpicturequestions.com/how-does-triangulation-help-our-evolution/}{Trangulatie bij GPRS}}
+    \caption[Triangulatie bij GPRS]{De locatie (blauwe ster) wordt bepaald aan de hand van triangulatie met gsm-masten. De berekende schatting kan zich overal bevinden in het blauwe vlak}
     \label{fig:triangulatie_gprs}
 \end{figure}
 \pagebreak
@@ -152,11 +152,11 @@ De proof of concept moet blijven functioneren in ongunstige omstandigheden, zoal
 \subsection{\IfLanguageName{dutch}{Water}{Water}}
 Het grootste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor het mobiele netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het aan de zijkant van een surfboard wordt gemonteerd. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
 \subsection{\IfLanguageName{dutch}{Sneeuw}{Snow}}
-In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal dat passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, breking, multipad en vervagen. (Zie figuur:\ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor het (L1 band) GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in de sneeuw. Een GPS-signaal kan bijvoorbeeld tot vierhonderd meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarbij het volumepercentage meer dan 1\% bedraagt kan het GPS-signaal slechts 3 meter diep doordringen.\autocite{avalanche_gps}
+In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal dat passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, refractie, multipad en vervagen. (Zie figuur:\ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor het (L1 band) GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in de sneeuw. Een GPS-signaal kan bijvoorbeeld tot vierhonderd meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarbij het volumepercentage meer dan 1\% bedraagt kan het GPS-signaal slechts 3 meter diep doordringen.\autocite{avalanche_gps}
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avalanche.png}
     %https://www.researchgate.net/figure/Signal-Paths-in-Avalanche-Debris_fig1_253280455
-    \caption{\href{https://www.researchgate.net/figure/Signal-Paths-in-Avalanche-Debris_fig1_253280455}{Signaal paden bij lawine puin}}
+    \caption[Negatieve invloed van refractie en weerkaatsing op GPS-signalen tijdens het penetreren van sneeuw]{\href{https://www.researchgate.net/figure/Signal-Paths-in-Avalanche-Debris_fig1_253280455}{Negatieve invloed van refractie en weerkaatsing op GPS-signalen tijdens het penetreren van sneeuw}}
     \label{fig:avalanche}
 \end{figure}
 \pagebreak

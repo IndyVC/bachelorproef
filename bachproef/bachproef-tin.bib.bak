@@ -140,4 +140,58 @@
   url    = {https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417},
 }
 
+@WWW{qzss,
+  author = {Government of Japan},
+  title  = {Overview of the Quasi-Zenith Satellite System (QZSS)},
+  url    = {https://qzss.go.jp/en/overview/services/sv01_what.html},
+}
+
+@WWW{img_groundstation,
+  author = {ESA},
+  editor = {ESA},
+  title  = {Cebreros ground station},
+  url    = {https://www.esa.int/About_Us/ESAC/Cebreros_ground_station},
+}
+
+@WWW{img_satellite,
+  author = {SpaceNews},
+  editor = {SpaceNews},
+  title  = {GPS 2F-6 Navigation Satellite Slated To Launch on May 15},
+  year   = {2014},
+  date   = {2014-05-12},
+  url    = {https://spacenews.com/40530gps-2f-6-navigation-satellite-slated-to-launch-on-may-15/},
+}
+
+@WWW{img_trilateratie,
+  author = {gisgeography},
+  editor = {gisgeography},
+  title  = {Trilateration vs Triangulation – How GPS Receivers Work},
+  year   = {2016},
+  date   = {2016-11-12},
+  url    = {https://gisgeography.com/trilateration-triangulation-gps/},
+}
+
+@WWW{fig_dgps,
+  author = {Francisco Restivo},
+  editor = {Francisco Restivo},
+  title  = {Components of a DGPS System},
+  year   = {2004},
+  date   = {2004-01-01},
+  url    = {https://www.researchgate.net/figure/Components-of-a-DGPS-System_fig1_252064818},
+}
+
+@WWW{fig_geostationair,
+  author = {Aidan-Phaswana},
+  editor = {Aidan-Phaswana},
+  title  = {De kosmische ruimte: de ruimtevaart en haar toepassingen},
+  url    = {https://quizlet.com/393158527/de-kosmische-ruimte-de-ruimtevaart-en-haar-toepassingen-flash-cards/},
+}
+
+@WWW{fig_MKR1400,
+  author = {Arduino},
+  editor = {Arduino},
+  title  = {ARDUINO MKR GSM 1400 CELLULAR KIT},
+  url    = {https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

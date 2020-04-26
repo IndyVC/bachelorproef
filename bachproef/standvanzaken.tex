@@ -12,14 +12,12 @@ Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn e
 \subsection{\IfLanguageName{dutch}{De werking van GPS}{How GPS works}}
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{groundstation.jpg}
-	%https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.esa.int%2FAbout_Us%2FESAC%2FCebreros_ground_station&psig=AOvVaw3m4fRPzsoJEUD7uxKB9P8U&ust=1583062350499000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCJD8uPrU9ucCFQAAAAAdAAAAABAD
-	\caption[Voorbeeld grondstation]{\href{https://www.esa.int/About_Us/ESAC/Cebreros_ground_stationt}{Voorbeeld grondstation}}
+	\caption[Voorbeeld grondstation]{\href{https://www.esa.int/About_Us/ESAC/Cebreros_ground_station}{Voorbeeld grondstation \autocite{img_groundstation}}}
 	\label{fig:groundstation}
 \end{figure}
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{satelliet.jpg}
-	%https://www.google.com/url?sa=i&url=https%3A%2F%2Fspacenews.com%2F40530gps-2f-6-navigation-satellite-slated-to-launch-on-may-15%2F&psig=AOvVaw0tzOggmMim-1CxoYTRl1Ze&ust=1583062792344000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCOD3jc3W9ucCFQAAAAAdAAAAABAD
-	\caption[Voorbeeld GPS-satelliet]{\href{https://spacenews.com/40530gps-2f-6-navigation-satellite-slated-to-launch-on-may-15/}{Voorbeeld GPS-satelliet}}
+	\caption[Voorbeeld GPS-satelliet]{\href{https://spacenews.com/40530gps-2f-6-navigation-satellite-slated-to-launch-on-may-15/}{Voorbeeld GPS-satelliet \autocite{img_satellite}}}
 	\label{fig:satelliet}
 \end{figure}
 
@@ -35,14 +33,13 @@ De grondstations worden gebruikt om de locatie bij te houden van de GPS-satellie
 \newline
 De GPS-satellieten zenden een signaal uit die de afstand en tijd bevat. Deze tijd wordt berekend met een klok aan boord. Een kwartskristalklok kan na 6 weken een volledige milliseconde afwijken van de werkelijke tijd door temperatuurschommelingen. Dit is gevaarlijk omdat het een grote impact heeft op het opmeten van posities bij snel bewegend ruimtevaartuig. Hierdoor maken satellieten gebruik van een ander type klok, de atoomklok. Atoomklokken zijn een 'verbetering' ten opzichte van de kwartskristal klok.  Na 10 jaar wijkt een atoomklok slechts een microseconde af, wat stabieler is in vergelijking met de kwartskristal klok. Alles moet stabiel blijven voor ruimtevaartmisies, waardoor de afwijking van de atoomklok dagelijks gecorrigeerd wordt. \autocite{atomic_clock}
 \newline
-Als de GPS-ontvanger de tijd en afstand uit het signaal heeft kunnen afleiden, kan het aan de hand van triangulatie zijn locatie bepalen. (Zie figuur: \ref{fig:triangulatie})
+Als de GPS-ontvanger de tijd en afstand uit het signaal heeft kunnen afleiden, kan het aan de hand van trilateratie zijn locatie bepalen. (Zie figuur: \ref{fig:trilateratie})
 Per satelliet wordt een radius bepaald. Hiervoor zijn minstens drie satellieten nodig. De overlapping van de radiussen bepalen één punt, de locatie van de GPS-ontvanger. Soms kan dit niet accuraat gebeuren, waarbij de radius van een vierde satelliet kan helpen. De laatste radius sluit dan foute mogelijkheden uit waardoor de locatie accurater is. Er is met andere woorden een positieve correlatie tussen het aantal satellieten dat gebruikt wordt en de nauwkeurigheid van de locatiebepaling. \autocite{gps}
 
 \begin{figure}
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie.jpg}
-	%https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommunicatiekc.com%2Ftriangulatie%2F&psig=AOvVaw3yrDqiAvEq65KAYiid2aw6&ust=1583063314296000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCKCi68bY9ucCFQAAAAAdAAAAABAD
-	\caption[Werking triangulatie]{\href{https://www.youtube.com/watch?v=QK1lDsinMwk}{Visualisatie hoe triangulatie werkt.}}
-	\label{fig:triangulatie}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{trilateratie.jpg}
+	\caption[Werking trilateratie]{\href{https://gisgeography.com/trilateration-triangulation-gps/}{Visualisatie hoe trilateratie werkt. \autocite{img_trilateratie}}}
+	\label{fig:trilateratie}
 \end{figure} 
 \pagebreak
 \subsection{\IfLanguageName{dutch}{Global Navigation Satellite Systems (GNSS)}{Global Navigation Satellite Systems (GNSS)}}
@@ -79,7 +76,7 @@ De reden voor het bestaan van deze verschillende systemen is van politieke aard.
 
 \section{Verschillende Locatiebepaling-technologieën}
 \label{sec:Locatiebepaling-technologieën}
-Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, triangulatie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Er is onderzoek gedaan naar alle locatiebepaling-technologieën om de meest accurate technologie te bepalen die gebruikt kan worden door de proof of concept. Naast de accuraatheid moet ook de locatiebepaling op zoveel mogelijk plaatsen succesvol werken zodat de proof of concept gebruikt kan worden als lawinepieper in de bergen of als GPS-tracker aan een kust.
+Het bepalen van een positie kan op veel manieren gebeuren. De systemen die besproken werden in de vorige sectie vallen allemaal terug op de traditionele methode, trilateratie. De werking van deze methode wordt in deze sectie verder toegelicht. Naast de traditionele methode is het belangrijk om te weten welke andere opties er nog bestaan. Er is onderzoek gedaan naar alle locatiebepaling-technologieën om de meest accurate technologie te bepalen die gebruikt kan worden door de proof of concept. Naast de accuraatheid moet ook de locatiebepaling op zoveel mogelijk plaatsen succesvol werken zodat de proof of concept gebruikt kan worden als lawinepieper in de bergen of als GPS-tracker aan een kust.
 
 \subsection{\IfLanguageName{dutch}{Standard Positioning Service (SPS)}{Standard Positioning Service (SPS)}}
 De 'Standard Positioning Service' (SPS) is een positionerings- en timingdienst die signalen broadcast op de GPS L1-frequentie. Deze frequentie, die gebruikt wordt door alle  \mbox{NAVSTAR} GPS-satellieten, zorgt ervoor dat GPS vrij te gebruiken is voor iedereen. \autocite{gps}
@@ -94,7 +91,7 @@ Differential Global Positioning System (DGPS) verbetert de accuraatheid van GPS.
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{dgps.png}
 		%https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.researchgate.net%2Ffigure%2FComponents-of-a-DGPS-System_fig1_252064818&psig=AOvVaw07YsVmaU9ifoTgAxmkFPSb&ust=1583073831676000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCPCjlt7_9ucCFQAAAAAdAAAAABAD
-	\caption[Differential Global Positioning System]{\href{https://www.researchgate.net/figure/Components-of-a-DGPS-System_fig1_252064818}{Na het bepalen van de locatie via satellieten, ontvangt de GPS-ontvanger correcties van een DGPS station}}
+	\caption[Differential Global Positioning System]{\href{https://www.researchgate.net/figure/Components-of-a-DGPS-System_fig1_252064818}{Na het bepalen van de locatie via satellieten, ontvangt de GPS-ontvanger correcties van een DGPS station \autocite{fig_dgps}}}
 	\label{fig:dgps}
 \end{figure}
 \newline
@@ -105,8 +102,7 @@ Door het beperkt aantal referentiestations kan deze methode niet geïmplementeer
 'Wide Area Augmentation' (WAAS) kan, naast basisstation op aarde (DGPS), ook GEO-satellieten gebruiken als vaste referentiepunten. Deze satellieten bevinden zich op 36.000 km hoogte boven de evenaar en draaien rond op dezelfde snelheid als de aarde. Hierdoor blijft de positie van de geosatelliet stationair ten opzichte van de aarde, waardoor het gebruikt kan worden als referentiestation.(Zie figuur:\ref{fig:geostationair})
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{geostationair.png}
-	%https://aardrijkskunde.dbz.be/graad3/taken/oefening_satellieten.htm
-	\caption[Geostationair]{\href{https://aardrijkskunde.dbz.be/graad3/taken/oefening_satellieten.htm}{De hoogte waarin satellieten zich moeten bevinden om geostationair te zijn}}
+	\caption[Geostationair]{\href{https://quizlet.com/393158527/de-kosmische-ruimte-de-ruimtevaart-en-haar-toepassingen-flash-cards/}{De hoogte waarin satellieten zich moeten bevinden om geostationair te zijn \autocite{fig_geostationair}}}
 	\label{fig:geostationair} 
 \end{figure}
 \subsection{\IfLanguageName{dutch}{Assisted Global Positioning System (A-GPS)}{Assisted Global Positioning System (A-GPS)}}
@@ -136,14 +132,14 @@ Als tweede optie wordt de locatie bepaald met behulp van wifi. Hierbij wordt de 
 \newline
 In 2020 zijn er wereldwijd slechts 19 landen die AML implementeren. AML kan alleen gebruikt worden bij het bellen van het noodnummer. De proof of concept werkt alleen met een eigen nummer, waardoor AML geen optie is. \autocite{aml} Het nodeloos opbellen van een noodnummer is illegaal.
 \subsection{\IfLanguageName{dutch}{General Packet Radio Service (GPRS)}{General Packet Radio Service (GPRS)}}
-General Packet Radio Service (GPRS) is een totaal andere manier van locatiebepaling. Deze technologie werkt via roaming en vereist geen GPS. Deze verbinding haalt de locatie op van gsm-masten, waardoor via triangulatie de locatie bepaalt kan worden (Zie figuur:\ref{fig:triangulatie_gprs}). Deze techniek werkt hetzelfde als GPS.
+General Packet Radio Service (GPRS) is een totaal andere manier van locatiebepaling. Deze technologie werkt via roaming en vereist geen GPS. Deze verbinding haalt de locatie op van gsm-masten, waardoor via trilateratie de locatie bepaalt kan worden (Zie figuur:\ref{fig:trilateratie_gprs}). Deze techniek werkt hetzelfde als GPS.
 \newline
-Het gebruik van deze techniek is echter veel minder accuraat zoals weergeven op figuur \ref{fig:triangulatie_gprs}. Volgens \cite{gprs} kan dit variëren van 20 tot 50 meter. Het voordeel aan GPRS is dat het in staat is om via roaming of sms zijn locatie te delen. Het gebruik van sms zorgt ervoor dat de proof of concept op een zeer globale manier gebruikt kan worden. Deze optie is budgetvriendelijker, want sms-en zijn voor providers zo goed als gratis in tegenstelling tot mobiele data. De combinatie van een GPS-ontvanger (ondersteuning voor NAVSTAR, Galileo en GLONASS) en de mogelijkheid tot het versturen van een sms zou zorgen voor een ideale proof of concept. 
+Het gebruik van deze techniek is echter veel minder accuraat zoals weergeven op figuur \ref{fig:trilateratie_gprs}. Volgens \cite{gprs} kan dit variëren van 20 tot 50 meter. Het voordeel aan GPRS is dat het in staat is om via roaming of sms zijn locatie te delen. Het gebruik van sms zorgt ervoor dat de proof of concept op een zeer globale manier gebruikt kan worden. Deze optie is budgetvriendelijker, want sms-en zijn voor providers zo goed als gratis in tegenstelling tot mobiele data. De combinatie van een GPS-ontvanger (ondersteuning voor NAVSTAR, Galileo en GLONASS) en de mogelijkheid tot het versturen van een sms zou zorgen voor een ideale proof of concept. 
 \begin{figure}
-    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{triangulatie_gprs.png}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{trilateratie_gprs.png}
 %https://www.google.com/search?tbs=simg:CAQSrQEJrrLXpgtW1nYaoQELELCMpwgaYgpgCAMSKJkIsBTyEoIDmgiDA5cIgQO5B4gDmj2dPaE0_1zO2J9A2-DP5M8U9yzcaMJJQwz9JWeZp5PeQ91p9B_1t-s-t57GaZYKqFkjHWNDErGPjWTFiDfGTdUPZPzFLx_1SAEDAsQjq7-CBoKCggIARIEyZLpqAwLEJ3twQkaGgoYCgZjaXJjbGXapYj2AwoKCC9tLzAxdmtsDA&sxsrf=ALeKk02ZKs3-33pizx_yPs1LYQ2NzzRrMw:1583058379858&q=trianguleren+mobiel&tbm=isch&sa=X&ved=2ahUKEwjJ_46DiPnnAhWNLewKHREFBhEQwg4oAHoECAcQKA
-    \caption[Triangulatie bij GPRS]{De locatie (blauwe ster) wordt bepaald aan de hand van triangulatie met gsm-masten. De berekende schatting kan zich overal bevinden in het blauwe vlak}
-    \label{fig:triangulatie_gprs}
+    \caption[Trilateratie bij GPRS]{De locatie (blauwe ster) wordt bepaald aan de hand van trilateratie met gsm-masten. De berekende schatting kan zich overal bevinden in het blauwe vlak}
+    \label{fig:trilateratie_gprs}
 \end{figure}
 \pagebreak
 \raggedbottom
@@ -156,7 +152,7 @@ In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw t
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{avalanche.png}
     %https://www.researchgate.net/figure/Signal-Paths-in-Avalanche-Debris_fig1_253280455
-    \caption[Negatieve invloed van refractie en weerkaatsing op GPS-signalen tijdens het penetreren van sneeuw]{\href{https://www.researchgate.net/figure/Signal-Paths-in-Avalanche-Debris_fig1_253280455}{Negatieve invloed van refractie en weerkaatsing op GPS-signalen tijdens het penetreren van sneeuw}}
+    \caption[Negatieve invloed van refractie en weerkaatsing op GPS-signalen tijdens het penetreren van sneeuw]{\href{https://www.researchgate.net/figure/Signal-Paths-in-Avalanche-Debris_fig1_253280455}{Negatieve invloed van refractie en weerkaatsing op GPS-signalen tijdens het penetreren van sneeuw \autocite{avalanche_gps}}}
     \label{fig:avalanche}
 \end{figure}
 \pagebreak

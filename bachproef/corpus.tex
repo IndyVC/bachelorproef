@@ -19,7 +19,7 @@ De totale kost van de proof of concept komt neer op \textbf{148.00 euro}. Naast 
 	\item De locatie bepalen aan de hand van GPRS;
 	\item De locatie doorsturen naar een REST API aan de hand van een POST request (JSON).
 \end{itemize}
-Het script is innovatief en staat opensource op \href{https://github.com/IndyVC/bap-arduino}{een github repository}. In het script werd gebruik gemaakt van verscheidene libraries om het traceren mogelijk te maken.
+Het script is innovatief en staat opensource op \underline{\href{https://github.com/IndyVC/bap-arduino}{een github repository}}. In het script werd gebruik gemaakt van verscheidene libraries om het traceren mogelijk te maken.
 Er werd gebruik gemaakt van:
 \begin{itemize}
 	\item \href{https://github.com/arduino-libraries/ArduinoHttpClient}{ArduinoHttpClient}: voor het versturen van data aan de hand van POST requests;
@@ -35,7 +35,7 @@ De proof of concept maakt gebruik van een simkaart (zie figuur: \ref{fig:simkaar
 \end{figure}
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{simkaart.jpg}
-	\caption{Simkaart}
+	\caption{Achterkant van de MKR 1400 gsm module waar de simkaart wordt geplaatst}
 	\label{fig:simkaart}
 \end{figure}
 
@@ -54,7 +54,7 @@ Deze stack staat voor:
 	\item Vue
 	\item Node.JS
 \end{itemize}
-Mongoose maakt gebruik van \href{https://www.mongodb.com/cloud/atlas}{MongoDB Atlas}. De backend, geschreven in Javascript, is opensource en staat online op \href{https://github.com/IndyVC/bap-backend}{een github repository}.
+Mongoose maakt gebruik van \href{https://www.mongodb.com/cloud/atlas}{MongoDB Atlas}. De backend, geschreven in Javascript, is opensource en staat online op \underline{\href{https://github.com/IndyVC/bap-backend}{een github repository}}.
 \newline
 De backend heeft als functie het ontvangen van locaties van de proof of concept. Deze locaties worden opgeslagen in een NO-SQL database. De database slaagt per locatie de volgende gegevens op:
 \begin{itemize}
@@ -76,7 +76,7 @@ De backend maakt gebruik van een gratis hosting plan, dat kan nadelig zijn. Het 
 \label{ch:frontend}
 
 \subsection{\IfLanguageName{dutch}{Ontwikkeling}{Development}}
-Zoals reeds verteld is er gebruik gemaakt van de MEVN-stack. Dit wil zeggen dat de webapplicatie ontwikkeld is in Vue, een nieuwer javascript-framework. De code van deze webapplicatie is opensource en staat online op \href{https://github.com/IndyVC/bap-frontend}{een github repository}.
+Zoals reeds verteld is er gebruik gemaakt van de MEVN-stack. Dit wil zeggen dat de webapplicatie ontwikkeld is in Vue, een nieuwer javascript-framework. De code van deze webapplicatie is opensource en staat online op \underline{\href{https://github.com/IndyVC/bap-frontend}{een github repository}}.
 \newline
 Voor de webapplicatie (zie figuur: \ref{fig:webapplicatie}) is er gebruik gemaakt van 'Google Maps'. Google Maps is een populaire online kaartendienst waarmee geografische locaties kunnen opgezocht worden waardoor dezelfde layout een vorm van betrouwbaarheid en herkenbaarheid geeft. Dit bevordert de gebruiksvriendelijkheid van de webapplicatie. Naast het tracken zelf, geeft het ook extra informatie weer, zoals welke methode gebruikt wordt, hoe snel de GPS-tracker zich voortbeweegt en hoe betrouwbaar de coördinaten zijn (aantal satellieten). De gebruiker kan de geschiedenis van de locaties wissen via een knop.
 \newline
@@ -89,3 +89,19 @@ Voor de implementatie van Google Maps is er gebruik gemaakt van een opensource e
 
 \subsection{\IfLanguageName{dutch}{Deployment}{Deployment}}
 Om de website online te zetten is er gebruik gemaakt van Netlify. \href{https://www.netlify.com/}{Netlify} is een hosting bedrijf dat een gratis plan aanbiedt. De webapplicatie staat \href{https://indy-bap-frontend.netlify.com/}{\underline{hier}} online.
+
+\section{\IfLanguageName{dutch}{Mobiele applicatie}{Mobile application}}
+\label{ch:mobileapp}
+Om de vergelijking te kunnen maken tussen de GPS in een gsm en de proof of concept, is er een mobiele applicatie ontwikkeld (zie figuur \ref{fig:mobileapp}). Deze mobiele applicatie berekent iedere drie seconden zijn locatie en stuurt het dan door naar de backend (sectie \ref{ch:backend}). De mobiele applicatie is ontwikkeld in \href{https://www.nativescript.org/}{NativeScript}. NativeScript is een open source framework dat gebruikt kan worden om native mobiele applicaties te maken voor Android en iOS. Om NativeScript te gebruiken kan er gekozen worden uit vier opties om de app te ontwikkelen:
+\begin{itemize}
+	\item Angular
+	\item Vue
+	\item Javascript
+	\item Typescript
+\end{itemize}
+Voor de mobiele applicatie is er gebruik gemaakt van Vue. De code van de mobiele applicatie is open source en staat online op \underline{\href{https://github.com/IndyVC/bap-gsmtracker}{een github repository}}. 
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mobile_app.jpg}
+	\caption{Mobiele applicatie}
+	\label{fig:mobileapp}
+\end{figure}

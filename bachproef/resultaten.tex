@@ -16,15 +16,17 @@ Voor de eerste field test is er op voorhand een route uitgestippeld (zie figuur 
 	\caption{Het uitvoeren van de eerste field test}
 	\label{fig:field_test_1}
 \end{figure}
+\newline
+\newline
+Het resultaat is zeer opmerkelijk. In figuur \ref{fig:field_test_1_resultaat} is het duidelijk dat de proof of concept (blauwe markers) beter scoort dan dan de GPS van een gsm (rode markers). De reden hiervoor kan niet volledig verklaart worden, want er kan geen onderzoek gedaan worden naar de GPS-chip in een gsm. Deze data is niet toegankelijk voor ontwikkelaars, alleen voor de fabrikant. De enige data die verkregen kan worden van de GPS-chip is de berekende locatie. 
+\newline
+Het gebruik van Google Maps op een gsm kan een meer accurate lokatiebepaling doen in vergelijking met het resultaat van de field test. Dit komt omdat Android en iOS extra informatie gebruiken zoals gsm-masten en wifi signalen (SSIDs). Google Maps maakt ook gebruik van verschillende algoritmes om de locatie te corrigeren zodat het lijkt alsof je gsm locatie altijd accuraat is. 
+\newline
+Voor de probleemstelling op te lossen, moet een GPS-tracker werken aan de kust en in berggebieden. Ook is de route niet op voorhand geweten, waardoor de gsm zeer slecht zou scoren als GPS-tracker omdat het geen gebruik kan maken van extra informatie en algoritmes van Google Maps. De proof of concept lijkt wel een goede oplossing te zijn voor de probleemstelling, omdat het een nauwkeurige locatie weergeeft zonder extra informatie en/of algoritmes. 
+\newline
+Uit de eerste field test kan er dus geconcludeerd worden dat de proof of concept slaagt in zijn opzet.
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{field_test_1_resultaat.png}
 	\caption{Resultaat van de eerste field test}
 	\label{fig:field_test_1_resultaat}
 \end{figure}
-\newline
-\newline
-Het resultaat is zeer opmerkelijk. In figuur \ref{fig:field_test_1_resultaat} is het duidelijk dat de proof of concept (blauwe markers) beter scoort dan dan de GPS van een gsm (rode markers). De reden hiervoor kan niet volledig verklaart worden, want er kan geen onderzoek gedaan worden naar de GPS-chip in een gsm. Deze data is niet toegankelijk voor ontwikkelaars, alleen voor de fabrikant. De enige data die verkregen kan worden van de GPS-chip is de berekende locatie. 
-\newline
-Wat opvalt is dat Google Maps wel accuraat lijkt te werken indien de route op de gsm zelf gevolgd wordt. Dit komt omdat Android en iOS extra informatie gebruiken zoals gsm-masten en wifi signalen (SSIDs). Google Maps maakt ook gebruik van verschillende algoritmes om de locatie te corrigeren zodat het lijkt alsof je gsm locatie altijd accuraat is.
-\newline
-Uit de eerste field test kan er dus geconcludeerd worden dat de proof of concept zijn lokatiebepaling meer accuraat is dan die van een gsm. 

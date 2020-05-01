@@ -1,0 +1,699 @@
+\chapter{\IfLanguageName{dutch}{Broncode frontend}{Source code frontend}}
+\label{ch:broncode_frontend}
+App.vue
+\begin{verbatim}
+<template>
+<div id="app" class="tile is-ancestor">
+<Maps class="tile is-6" />
+<Controls class="tile is-6" />
+</div>
+</template>
+
+<script>
+import Maps from "./components/Maps";
+import Controls from "./components/Controls";
+export default {
+name: "App",
+components: {
+Maps,
+Controls
+}
+};
+</script>
+
+<style>
+html,
+body {
+padding: 0;
+margin: 0;
+}
+#app {
+font-family: Avenir, Helvetica, Arial, sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-align: center;
+height: 100vh;
+width: 100vw;
+}
+</style>
+\end{verbatim}
+main.js
+\begin{verbatim}
+import Vue from "vue";
+import App from "./App.vue";
+import store from "./store/index";
+import * as VueGoogleMaps from "vue2-google-maps";
+
+require("./styles/main.scss");
+
+Vue.use(VueGoogleMaps, {
+load: {
+key: "AIzaSyAbvjSIFZ5jJqopl330QpfFtIDyWYTxhIg",
+libraries: "places" // This is required if you use the Autocomplete plugin
+// OR: libraries: 'places,drawing'
+// OR: libraries: 'places,drawing,visualization'
+// (as you require)
+
+//// If you want to set the version, you can do so:
+// v: '3.26',
+}
+
+//// If you intend to programmatically custom event listener code
+//// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
+//// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
+//// you might need to turn this on.
+// autobindAllEvents: false,
+
+//// If you want to manually install components, e.g.
+//// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
+//// Vue.component('GmapMarker', GmapMarker)
+//// then disable the following:
+// installComponents: true,
+});
+Vue.config.productionTip = false;
+
+new Vue({
+store,
+render: h => h(App)
+}).$mount("#app");
+\end{verbatim}
+Maps.vue
+\begin{verbatim}
+<template>
+<section class="container">
+<GmapMap
+v-if="getLocations.length>0"
+ref="gmap"
+:center="center"
+:zoom="zoom"
+map-type-id="terrain"
+style="width: 80vw; height: 80vh;"
+>
+<GmapInfoWindow
+:options="infoOptions"
+:position="infoPosition"
+:opened="infoOpened"
+@closeclick="infoOpened=false"
+>
+<span v-html="infoContent" class="has-text-left"></span>
+</GmapInfoWindow>
+<div v-if="getShow==0 || getShow==2">
+<div v-if="getShowMarkers">
+<GmapMarker
+:key="i"
+v-for="(m, i) in getGSM"
+:position="m"
+:clickable="true"
+@click="toggleInfo(m, i)"
+icon="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+/>
+</div>
+<GmapPolyline :path="getGSM" v-bind:options="{ strokeColor:'#FF0000'}"></GmapPolyline>
+</div>
+<div v-if="getShow==0 || getShow==1">
+<div v-if="getShowMarkers">
+<GmapMarker
+:key="-i-1"
+v-for="(m, i) in getPOC"
+:position="m"
+:clickable="true"
+@click="toggleInfo(m, i)"
+icon="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+/>
+</div>
+<GmapPolyline :path="getPOC" v-bind:options="{ strokeColor:'#0000FF'}"></GmapPolyline>
+</div>
+</GmapMap>
+<div v-else>
+<p>No locations yet!</p>
+</div>
+</section>
+</template>
+
+<script>
+import { mapGetters, mapActions } from "vuex";
+import { gmapApi } from "vue2-google-maps";
+//import GmapCustomMarker from 'vue2-gmap-custom-marker';
+export default {
+mounted() {
+this.createMap();
+},
+components: {},
+data() {
+return {
+markers: [],
+center: { lat: 10, lng: 10 },
+zoom: 7,
+infoPosition: null,
+infoContent: null,
+infoOpened: false,
+infoCurrentKey: null,
+infoOptions: {
+pixelOffset: {
+width: 0,
+height: -35
+}
+},
+flag: false
+};
+},
+methods: {
+...mapActions(["$fetchLocations"]),
+/**CALCULATE CENTER */
+rad2degr(rad) {
+return (rad * 180) / Math.PI;
+},
+/**CALCULATE CENTER */
+degr2rad(degr) {
+return (degr * Math.PI) / 180;
+},
+/**CALCULATE CENTER */
+/**
+* @param latLngInDeg array of arrays with latitude and longtitude
+*   pairs in degrees. e.g. [[latitude1, longtitude1], [latitude2
+*   [longtitude2] ...]
+*
+* @return array with the center latitude longtitude pairs in
+*   degrees.
+*/
+getLatLngCenter(latLngInDegr) {
+let LATIDX = 0;
+let LNGIDX = 1;
+let sumX = 0;
+let sumY = 0;
+let sumZ = 0;
+for (let i = 0; i < latLngInDegr.length; i++) {
+let lat = this.degr2rad(latLngInDegr[i][LATIDX]);
+let lng = this.degr2rad(latLngInDegr[i][LNGIDX]);
+// sum of cartesian coordinates
+sumX += Math.cos(lat) * Math.cos(lng);
+sumY += Math.cos(lat) * Math.sin(lng);
+sumZ += Math.sin(lat);
+}
+let avgX = sumX / latLngInDegr.length;
+let avgY = sumY / latLngInDegr.length;
+let avgZ = sumZ / latLngInDegr.length;
+// convert average x, y, z coordinate to latitude and longtitude
+let lng = Math.atan2(avgY, avgX);
+let hyp = Math.sqrt(avgX * avgX + avgY * avgY);
+let lat = Math.atan2(avgZ, hyp);
+return { lat: this.rad2degr(lat), lng: this.rad2degr(lng) };
+},
+/**MARKER CLICK */
+toggleInfo(m, i) {
+this.infoPosition = m;
+const info = `<p>Date: ${m.date.toLocaleString() ?? "unknown"} <br/>
+Speed: ${m.speed ?? "unknown"} <br/>
+Satellites: ${m.satellites ?? "unknown"} </p>`;
+this.infoContent = info;
+if (this.infoCurrentKey == i) {
+this.infoOpened = !this.infoOpened;
+} else {
+this.infoOpened = true;
+this.infoCurrentKey = i;
+}
+},
+/** CALCULATE ZOOM */
+calculateBounds(markers) {
+let bounds = new this.google.maps.LatLngBounds();
+markers.forEach(m => {
+bounds.extend(m);
+});
+this.flag = true;
+return bounds;
+},
+/** CALCULATE ZOOM */
+getBoundsZoomLevel(bounds, mapDim) {
+function latRad(lat) {
+var sin = Math.sin((lat * Math.PI) / 180);
+var radX2 = Math.log((1 + sin) / (1 - sin)) / 2;
+return Math.max(Math.min(radX2, Math.PI), -Math.PI) / 2;
+}
+function zoom(mapPx, worldPx, fraction) {
+return Math.floor(Math.log(mapPx / worldPx / fraction) / Math.LN2);
+}
+var WORLD_DIM = { height: 256, width: 256 };
+var ZOOM_MAX = 21;
+var ne = bounds.getNorthEast();
+var sw = bounds.getSouthWest();
+var latFraction = (latRad(ne.lat()) - latRad(sw.lat())) / Math.PI;
+var lngDiff = ne.lng() - sw.lng();
+var lngFraction = (lngDiff < 0 ? lngDiff + 360 : lngDiff) / 360;
+var latZoom = zoom(mapDim.height, WORLD_DIM.height, latFraction);
+var lngZoom = zoom(mapDim.width, WORLD_DIM.width, lngFraction);
+return Math.min(latZoom, lngZoom, ZOOM_MAX);
+},
+createMap() {
+this.markers = this.getLocations.map(loc => {
+return {
+lat: Number(loc.latitude),
+lng: Number(loc.longitude),
+date: new Date(loc.createdAt),
+speed: loc.speed,
+satellites: loc.satellites,
+device: loc.device
+};
+});
+this.center = this.getLatLngCenter(this.markers.map(m => [m.lat, m.lng]));
+this.zoom = this.getBoundsZoomLevel(this.calculateBounds(this.markers), {
+height: 600,
+width: 1000
+});
+}
+},
+computed: {
+...mapGetters(["getLocations", "getGSM", "getPOC","getShow","getShowMarkers"]),
+google: gmapApi
+},
+watch: {
+google() {
+this.createMap();
+},
+getLocations() {
+this.createMap();
+}
+},
+created() {
+this.$fetchLocations();
+// window.setInterval(() => {
+//   this.$fetchLocations();
+// }, 5000);
+}
+};
+</script>
+<style scoped>
+.container {
+box-sizing: border-box;
+margin: 20px;
+}
+</style>
+\end{verbatim}
+Controls.vue
+\begin{verbatim}
+<template>
+<section class="card">
+<div class="tab">
+<a class="poc-tab" @click="activeTab=0">POC tracker</a>
+<a class="gsm-tab" @click="activeTab=1">GSM tracker</a>
+</div>
+
+<div class="padding-15" v-if="getPOC.length>0 && activeTab==0">
+<div>
+<div class="columns has-text-left">
+<p class="heading column">[GPS/GPRS]:</p>
+<p class="subtitle column">{{gpsMethod}}/{{gprsMethod}}</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Total markers:</p>
+<p class="subtitle column">{{totalMarkers}}</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Recent marker:</p>
+<p class="subtitle column">{{recentMarker}}</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Max speed:</p>
+<p class="subtitle column">{{maxSpeed.toFixed(2)}} km\h</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Average speed:</p>
+<p class="subtitle column">{{averageSpeed.toFixed(2)}} km\h</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Min speed:</p>
+<p class="subtitle column">{{minSpeed.toFixed(2)}} km\h</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Max satellites:</p>
+<p class="subtitle column">{{maxSatellites.toFixed(2)}}</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Average satellites:</p>
+<p class="subtitle column">{{averageSatellites.toFixed(2)}}</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Min satellites:</p>
+<p class="subtitle column">{{minSatellites.toFixed(2)}}</p>
+</div>
+</div>
+<div class="buttons">
+<button class="button is-small" @click="deleteLocations()">Clear history</button>
+<button class="button is-small" @click="$toggleMarkers()">Hide all markers</button>
+<button class="button is-small" @click="$setShow(0)">Show all devices</button>
+<button class="button is-small" @click="$setShow(1)">Show only PoC</button>
+<button class="button is-small" @click="$setShow(2)">Show only gsm</button>
+</div>
+</div>
+<div v-else-if="activeTab==0">
+<p>No data from the proof of concept. You may check gsm-tracker.</p>
+</div>
+
+<div class="padding-15" v-if="getGSM.length>0 && activeTab==1">
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Total markers:</p>
+<p class="subtitle column">{{totalMarkersGSM}}</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Recent marker:</p>
+<p class="subtitle column">{{recentMarkerGSM}}</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Max speed:</p>
+<p class="subtitle column">{{maxSpeedGSM.toFixed(2)}} km\h</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Average speed:</p>
+<p class="subtitle column">{{averageSpeedGSM.toFixed(2)}} km\h</p>
+</div>
+</div>
+<div>
+<div class="columns has-text-left">
+<p class="heading column">Min speed:</p>
+<p class="subtitle column">{{minSpeedGSM.toFixed(2)}} km\h</p>
+</div>
+</div>
+<div class="buttons">
+<button class="button is-small" @click="deleteLocations()">Clear history</button>
+<button class="button is-small" @click="$toggleMarkers()">Hide all markers</button>
+<button class="button is-small" @click="$setShow(0)">Show all devices</button>
+<button class="button is-small" @click="$setShow(1)">Show only PoC</button>
+<button class="button is-small" @click="$setShow(2)">Show only gsm</button>
+</div>
+</div>
+<div v-else-if="activeTab==1">
+<p>No data from the gsm-tracker. You may check the proof of concept.</p>
+</div>
+</section>
+</template>
+
+<script>
+import { mapGetters, mapActions } from "vuex";
+export default {
+name: "Controls",
+data() {
+return {
+activeTab: 0
+};
+},
+methods: {
+...mapActions(["$deleteLocations", "$toggleMarkers", "$setShow"]),
+deleteLocations() {
+let result = confirm("Are you sure you want to delete all locations?");
+if (result) {
+this.$deleteLocations();
+}
+}
+},
+computed: {
+...mapGetters(["getPOC", "getGSM"]),
+gpsMethod() {
+return this.getPOC.filter(l => l.method == "GPS").length;
+},
+gprsMethod() {
+return this.getPOC.filter(l => l.method == "GPRS").length;
+},
+totalMarkers() {
+return this.getPOC.length;
+},
+recentMarker() {
+return new Date(
+this.getPOC[this.getPOC.length - 1].date
+).toLocaleString();
+},
+maxSpeed() {
+const values = [
+...this.getPOC
+.filter(l => l.speed != undefined && l.speed != null && l.speed >= 0)
+.map(l => Number(l.speed))
+];
+if (values.length > 0) return Math.max(values) ?? 0;
+else return 0;
+},
+averageSpeed() {
+let values = [
+...this.getPOC
+.filter(l => l.speed != undefined && l.speed != null && l.speed >= 0)
+.map(l => Number(l.speed))
+];
+if (values.length > 0) {
+let sum = values.reduce((previous, current) => (current += previous));
+let avg = sum / values.length;
+return avg ?? 0;
+}
+return 0;
+},
+minSpeed() {
+const values = [
+...this.getPOC
+.filter(l => l.speed != undefined && l.speed != null && l.speed >= 0)
+.map(l => Number(l.speed))
+];
+if (values.length > 0) return Math.min(values) ?? 0;
+else return 0;
+},
+maxSatellites() {
+const values = [
+...this.getPOC
+.filter(
+l =>
+l.satellites != undefined &&
+l.satellites != null &&
+l.satellites >= 0
+)
+.map(l => Number(l.satellites))
+];
+if (values.length > 0) return Math.max(values) ?? 0;
+else return 0;
+},
+averageSatellites() {
+const values = [
+...this.getPOC
+.filter(
+l =>
+l.satellites != undefined &&
+l.satellites != null &&
+l.satellites >= 0
+)
+.map(l => Number(l.satellites))
+];
+if (values.length > 0) {
+let sum = values.reduce((previous, current) => (current += previous));
+let avg = sum / values.length;
+return avg ?? 0;
+}
+return 0;
+},
+minSatellites() {
+const values = [
+...this.getPOC
+.filter(
+l =>
+l.satellites != undefined &&
+l.satellites != null &&
+l.satellites >= 0
+)
+.map(l => Number(l.satellites))
+];
+if (values.length > 0) return Math.min(values) ?? 0;
+else return 0;
+},
+totalMarkersGSM() {
+return this.getGSM.length;
+},
+recentMarkerGSM() {
+return new Date(
+this.getGSM[this.getGSM.length - 1].date
+).toLocaleString();
+},
+maxSpeedGSM() {
+const values = [
+...this.getGSM
+.filter(l => l.speed != undefined && l.speed != null && l.speed >= 0)
+.map(l => Number(l.speed))
+];
+if (values.length > 0) return Math.max(values) ?? 0;
+else return 0;
+},
+averageSpeedGSM() {
+let values = [
+...this.getGSM
+.filter(l => l.speed != undefined && l.speed != null && l.speed >= 0)
+.map(l => Number(l.speed))
+];
+let sum = values.reduce((previous, current) => (current += previous));
+let avg = sum / values.length;
+return avg ?? 0;
+},
+minSpeedGSM() {
+const values = [
+...this.getGSM
+.filter(l => l.speed != undefined && l.speed != null && l.speed >= 0)
+.map(l => Number(l.speed))
+];
+if (values.length > 0) return Math.min(values) ?? 0;
+else return 0;
+}
+}
+};
+</script>
+<style scoped>
+.card {
+width: 80vw;
+height: 80vh;
+margin: 20px;
+display: flex;
+flex-direction: column;
+}
+.tab {
+width: 80%;
+margin: 0 auto;
+}
+.gsm-tab,
+.poc-tab {
+padding: 10px;
+color: black;
+font-weight: bold;
+}
+.gsm-tab:hover {
+color: red;
+}
+.poc-tab:hover {
+color: blue;
+}
+.padding-15 {
+padding: 15px;
+}
+.columns {
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+.button {
+margin-top: 20px;
+}
+.controls {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+</style>
+\end{verbatim}
+Vuex index.js
+\begin{verbatim}
+import Vue from "vue";
+import Vuex from "vuex";
+//modules
+import location from "./modules/location";
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+modules: {
+location
+}
+});
+\end{verbatim}
+Vuex location.js
+\begin{verbatim}
+import axios from "axios";
+
+const state = {
+locations: [],
+gsm: [],
+poc: [],
+show: 0, //0 = all, 1 = poc, 2 = gsm
+showMarkers: true,
+};
+
+const getters = {
+getLocations: (state) => state.locations,
+getGSM: (state) => state.gsm,
+getPOC: (state) => state.poc,
+getShow: (state) => state.show,
+getShowMarkers: (state) => state.showMarkers,
+};
+
+const actions = {
+async $fetchLocations({ commit }) {
+const response = await axios.get(
+"https://indy-bap-backend.herokuapp.com/api/locations"
+);
+commit("SET_LOCATIONS", response.data.data);
+},
+
+async $deleteLocations({ commit }) {
+await axios.delete("https://indy-bap-backend.herokuapp.com/api/locations");
+commit("SET_LOCATIONS", []);
+},
+$setShow({ commit }, payload) {
+commit("SET_SHOW", payload);
+},
+$toggleMarkers({ commit, state }) {
+const bool = state.showMarkers;
+commit("SET_SHOW_MARKERS", !bool);
+},
+};
+
+const mutations = {
+SET_LOCATIONS: (state, locs) => {
+state.locations = locs;
+state.gsm = locs
+.filter((l) => l.device == "gsm")
+.map((loc) => {
+return {
+lat: Number(loc.latitude),
+lng: Number(loc.longitude),
+date: new Date(loc.createdAt),
+speed: loc.speed,
+satellites: loc.satellites,
+device: loc.device,
+};
+});
+state.poc = locs
+.filter((l) => l.device == "poc")
+.map((loc) => {
+return {
+lat: Number(loc.latitude),
+lng: Number(loc.longitude),
+date: new Date(loc.createdAt),
+speed: loc.speed,
+satellites: loc.satellites,
+device: loc.device,
+method: loc.method,
+};
+});
+},
+SET_SHOW: (state, payload) => (state.show = payload),
+SET_SHOW_MARKERS: (state, payload) => (state.showMarkers = payload),
+};
+
+export default {
+state,
+getters,
+actions,
+mutations,
+};
+\end{verbatim}

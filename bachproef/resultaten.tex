@@ -4,7 +4,7 @@ In dit hoofdstuk worden de testen en hun resultaten besproken.
 \section{\IfLanguageName{dutch}{Bespreking requirementanalyse}{Analyzing requirementanalyse}}
 WACHTEN OP MEER ANTWOORDEN
 \section{\IfLanguageName{dutch}{Vergelijking tussen GPS van een gsm en proof of concept}{Difference between the GPS from a phone and the proof of concept}}
-Tijdens de eerste test werden er 2 toestellen gebruikt, de proof of concept en een gsm. De gsm is een Xiaomi Mi 9T (kostprijs 332 euro).
+Tijdens de eerste test werden er 2 toestellen gebruikt: de proof of concept en een gsm. De gsm is een Xiaomi Mi 9T (kostprijs 332 euro).
 Voor de eerste field test is er op voorhand een route uitgestippeld (zie figuur \ref{fig:uitgestippelde_route}). Tijdens het wandelen van deze route stuurde de proof of concept (\ref{ch:proof-of-concept}) en de mobiele applicatie (\ref{ch:mobileapp}) tegelijk hun locaties door om de drie seconden. (Zie figuur \ref{fig:field_test_1})
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{uitgestippelde_route.png}
@@ -20,9 +20,9 @@ Voor de eerste field test is er op voorhand een route uitgestippeld (zie figuur 
 \newline
 Het resultaat is zeer opmerkelijk. In figuur \ref{fig:field_test_1_resultaat} is het duidelijk dat de proof of concept (blauwe markers) beter scoort dan dan de GPS van een gsm (rode markers). De reden hiervoor kan niet volledig verklaart worden, want er kan geen onderzoek gedaan worden naar de GPS-chip in een gsm. Deze data is niet toegankelijk voor ontwikkelaars, alleen voor de fabrikant. De enige data die verkregen kan worden van de GPS-chip is de berekende locatie. 
 \newline
-Het gebruik van Google Maps op een gsm kan een meer accurate lokatiebepaling doen in vergelijking met het resultaat van de field test. Dit komt omdat Android en iOS extra informatie gebruiken zoals gsm-masten en wifi signalen (SSIDs). Google Maps maakt ook gebruik van verschillende algoritmes om de locatie te corrigeren zodat het lijkt alsof je gsm locatie altijd accuraat is. 
+Het gebruik van Google Maps op een gsm kan een meer accurate lokatiebepaling doen in vergelijking met het resultaat van de field test. Dit komt omdat Android en iOS extra informatie gebruiken zoals gsm-masten en wifi signalen (SSIDs). Google Maps maakt ook gebruik van verschillende algoritmes om de locatie te schatten op een straat zodat het lijkt alsof de GPS accuraat is.
 \newline
-Voor de probleemstelling op te lossen, moet een GPS-tracker werken aan de kust en in berggebieden. Ook is de route niet op voorhand geweten, waardoor de gsm zeer slecht zou scoren als GPS-tracker omdat het geen gebruik kan maken van extra informatie en algoritmes van Google Maps. De proof of concept lijkt wel een goede oplossing te zijn voor de probleemstelling, omdat het een nauwkeurige locatie weergeeft zonder extra informatie en/of algoritmes. 
+Voor de probleemstelling op te lossen, moet een GPS-tracker werken aan de kust en in berggebieden. Ook is de route niet op voorhand geweten, waardoor een gsm zeer slecht zou scoren als GPS-tracker omdat het geen gebruik kan maken van extra informatie en algoritmes van Google Maps. De proof of concept lijkt wel een goede oplossing te zijn voor de probleemstelling, omdat het een nauwkeurige locatie weergeeft zonder extra informatie en/of algoritmes. 
 \newline
 Uit de eerste field test kan er dus geconcludeerd worden dat de proof of concept slaagt in zijn opzet.
 \begin{figure}

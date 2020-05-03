@@ -127,7 +127,7 @@ Door gebruik te maken van deze positioneringstechnieken is het de meest accurate
 \newline
 Deze methode wordt gebruikt bij telefonische noodoproepen. Bij het begin van het bellen wordt er eerst gekeken of de wifi en GPS aanstaat. Als de 'battery check' positief is, worden deze services automatisch geactiveerd. 
 \newline
-AML gaat parallel zijn locatie proberen bepalen aan de hand van wifi, sms en GNSS, zodat het zo min mogelijk tijd verliest om de beller te lokaliseren. De locatiebepaling gebeurt aan de hand van een geprioritiseerde rij. Indien GNSS als eerste de locatie kan bepalen wordt deze als eerste verzonden naar de hulpdiensten. 
+AML gaat parallel zijn locatie proberen bepalen aan de hand van wifi, sms en GNSS, zodat het zo min mogelijk tijd verliest om de beller te localiseren. De locatiebepaling gebeurt aan de hand van een geprioritiseerde rij. Indien GNSS als eerste de locatie kan bepalen wordt deze als eerste verzonden naar de hulpdiensten. 
 Als tweede optie wordt de locatie bepaald met behulp van wifi. Hierbij wordt de locatie gebaseerd op wifi 'Service Set Identifiers' (SSIDs) of MAC-adressen van access points waarmee de gsm verbonden is. Als laatste optie wordt de cel ID verstuurd van de mast waarmee de beller verbonden is. Indien men geen locatie kan bepalen, wordt er een sms verstuurd dat alle positioneringstechnieken (wifi, GNSS, cel ID) gefaald hebben.
 \newline
 In 2020 zijn er wereldwijd slechts 19 landen die AML implementeren. AML kan alleen gebruikt worden bij het bellen van het noodnummer. De proof of concept werkt alleen met een eigen nummer, waardoor AML geen optie is. \autocite{aml} Het nodeloos opbellen van een noodnummer is illegaal.

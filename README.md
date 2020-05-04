@@ -4,24 +4,14 @@ Status:
 - Backend is volledig opgezet en gedeployed. 
 - Webapplicatie is volledig opgezet en gedeployed.
 - Cross platform applicatie die een gsm omzet in een GPS-tracker. Indien de app actief is kan de locatie ook bekeken worden op de webapplicatie (indy-bap-frontend.netlify.com)
+- Alle field tests + analyses klaar
+- Conclusie geschreven
+- voorwoord geschreven
+- Samenvatting geschreven
+=> Klaar. Wachten op feedback. 
 
-------------------------
-
-Field tests:
-- Vergelijking tussen gsm en poc is klaar.
-
-------------------------
-
-To do:
-- Case maken
-- Field test waterdichtheid
-- Analyse van de enquête
-- Conclusie schrijven
-- Samenvatting/abstractie schrijven
-- Woord vooraf schrijven
-- Code in bijlagen
-
-------------------------
+TODO:
+- Poster maken.
 
 Repositories:
 - Script proof of concept:https://github.com/IndyVC/bap-arduino

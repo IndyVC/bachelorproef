@@ -14,7 +14,6 @@ Naast deze eisen moet de batterijduur zo lang mogelijk meegaan en de locatiebepa
 Er is bewust gekozen om geen smartphones te gebruiken. Eerst en vooral hebben smartphones een hoog batterijverbruik omdat er de hele tijd een besturingssyteem actief is. Hiernaast zijn GPS chips die gebruikt worden in smartphones vaak inaccuraat.
 \newline
 \section{\IfLanguageName{dutch}{Raspberry Pi}{Raspberry Pi}}
-Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerking komen kunnen teruggevonden worden in tabel \ref{tab:rpimodellen}
 \begin{table}[]
 	\begin{tabular}{ll}
 		\textbf{Model}                  & \textbf{Prijs (euro)} \\
@@ -23,42 +22,42 @@ Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerkin
 		Raspberry Pi 3 B       & 37.95        \\
 		Raspberry Pi 3 A+      & 26.80       
 	\end{tabular}
-\caption[Prijsvergelijking Raspberry Pi]{Prijsvergelijking modellen Raspberry Pi. De prijzen zijn geraadpleegd op \url{https://www.raspberrypi.org/products}}
-\label{tab:rpimodellen}
+	\caption[Prijsvergelijking Raspberry Pi]{Prijsvergelijking modellen Raspberry Pi. De prijzen zijn geraadpleegd op \url{https://www.raspberrypi.org/products}}
+	\label{tab:rpimodellen}
 \end{table}
+\begin{table}[]
+	\begin{tabular}{llp{8cm}}
+		\textbf{Component}           & \textbf{Prijs (euro)} & \textbf{Doel}\\
+		\href{https://www.raspberrypi.org/products}{Raspberry Pi 3A+}    & 26.80        & Het hoofd toestel, draait een besturingssysteem en voert alles aan.\\
+		\href{https://www.bol.com/nl/p/ philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE\&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123\& utm\_source=51123\&utm\_medium=Afﬁliates\&utm\_campaign=CPS\&utm\_content=txl}{SD-kaart (min. 8GB)} & 9.99         & Hierop wordt het besturingssysteem en het script opgeslagen.\\
+		\href{https://www.robotshop.com/eu/ en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html}{GSM HAT}             & 46.61        & Dit zorgt voor online communicatie om de data door te sturen.\\
+		\href{https://www.sossolutions.nl/1566-usb-battery-pack-for-raspberry-pi-10000mah-2-x-5v-outputs?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VfLwMiBk7S2IyG0X13mIPVppguIaRPsgBf2mtAYpxLGU7K8PmdalmRoCbZgQAvD\_BwE}{5V} Battery          & 54.95        & Hierdoor kan de proof of concept draadloos werken.\\
+		\href{https://www.sossolutions.nl/raspberry-pi-gps-hat?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VZeOJ8Gh0lykmCo9hwT2Zn5j8bvYHn\_mQX2lXPTCSkvUFwH6F3qQexoCutYQAvD\_BwE}{GPS HAT}             & 39.95        & Een meer accurate locatiebepaling in vergelijking met AGPS.\\
+		Totale kost:        & \textbf{178.30}        &                                          
+	\end{tabular}
+	\caption{Prijs opstelling Raspberry Pi}
+	\label{tab:rpi}
+\end{table}
+Er bestaan verschillende veries van de Raspberry Pi. De versies die in aanmerking komen kunnen teruggevonden worden in tabel \ref{tab:rpimodellen}
 \newline
 Naast de Raspberry Pi zijn er nog componenten nodig (zie tabel:\ref{tab:rpi}).
-\begin{table}[]
-	\begin{tabular}{llll}
-		\textbf{Component}           & \textbf{Prijs (euro)} & \textbf{Doel}                                                                & Link                                                                                                                                                                                                                             \\
-		\href{https://www.raspberrypi.org/products}{Raspberry Pi 3A+}    & 26.80        & Het hoofd toestel, draait een besturingssysteem en voert alles aan. & https://www.raspberrypi.org/products                                                                                                                                                                                             \\
-		\href{https://www.bol.com/nl/p/ philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE\&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123\& utm\_source=51123\&utm\_medium=Afﬁliates\&utm\_campaign=CPS\&utm\_content=txl}{SD-kaart (min. 8GB)} & 9.99         & Hierop wordt het besturingssysteem en het script opgeslagen.        & https://www.bol.com/nl/p/ philips-sd-kaart-8gb-sd-card-class-4/9200000023935849/?country=BE\&Referrer=ADVNLPPcefd2c00d536683c00927aff17000051123\& utm\_source=51123\&utm\_medium=Afﬁliates\&utm\_campaign=CPS\&utm\_content=txl \\
-		\href{https://www.robotshop.com/eu/ en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html}{GSM HAT}             & 46.61        & Dit zorgt voor online communicatie om de data door te sturen.       & https://www.robotshop.com/eu/ en/gsm-gprsgnssbluetooth-hat-raspberry-pi.html                                                                                                                                                     \\
-		\href{https://www.sossolutions.nl/1566-usb-battery-pack-for-raspberry-pi-10000mah-2-x-5v-outputs?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VfLwMiBk7S2IyG0X13mIPVppguIaRPsgBf2mtAYpxLGU7K8PmdalmRoCbZgQAvD\_BwE}{5V} Battery          & 54.95        & Hierdoor kan de proof of concept draadloos werken.                  & https://www.sossolutions.nl/1566-usb-battery-pack-for-raspberry-pi-10000mah-2-x-5v-outputs?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VfLwMiBk7S2IyG0X13mIPVppguIaRPsgBf2mtAYpxLGU7K8PmdalmRoCbZgQAvD\_BwE                                    \\
-		\href{https://www.sossolutions.nl/raspberry-pi-gps-hat?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VZeOJ8Gh0lykmCo9hwT2Zn5j8bvYHn\_mQX2lXPTCSkvUFwH6F3qQexoCutYQAvD\_BwE}{GPS HAT}             & 39.95        & Een meer accurate locatiebepaling in vergelijking met AGPS.         & https://www.sossolutions.nl/raspberry-pi-gps-hat?gclid=CjwKCAjwvZv0BRA8EiwAD9T2VZeOJ8Gh0lykmCo9hwT2Zn5j8bvYHn\_mQX2lXPTCSkvUFwH6F3qQexoCutYQAvD\_BwE                                                                             \\
-		Totale kost:        & \textbf{178.30}        &                                                                     &                                                                                                                                                                                                                                 
-	\end{tabular}
-\caption{Prijs opstelling Raspberry Pi}
-\label{tab:rpi}
-\end{table}
 
 \section{\IfLanguageName{dutch}{Arduino}{Arduino}}
-Er kan eveneens gebruik gemaakt worden van een Arduino. Arduino is de marktleider in open source hardware en bezit over hun eigen software eco-systeem. Zo beschikken ze over hun eigen programmeertaal en code text editor. Ze brengen verschillende hardware uit op de markt die gebruikt kan worden voor 'Internet of Things'. Ze bieden een module aan die geprogrammeerd kan worden die voldoet aan alle eisen, namelijk de MKR 1400 GSM module. (Zie figuur: \ref{fig:mkr1400}) Er zijn uiteraard nog componenten nodig (zie tabel: \ref{tab:arduino}).
 \begin{table}[]
-	\begin{tabular}{llll}
-		\textbf{Component}         & \textbf{Prijs (euro)} & \textbf{Doel}                                                               & Link                                                                     \\
-		\href{https://store.arduino.cc/arduino-mkr-gsm-1400-1415}{MKR GSM}           & 80.35        & Dit component runt het script en stuurt de andere componenten aan. & https://store.arduino.cc/arduino-mkr-gsm-1400-1415                       \\
-		\href{https://store.arduino.cc/arduino-mkr-gps-shield}{MKR GPS Shield}    & 41.75        & Een meer accurate locatiebepaling in vergelijking met GPRS.        & https://store.arduino.cc/arduino-mkr-gps-shield                          \\
-		\href{https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh}{LiPo 3.7V 2500mAh} & 25.90        & Dit zorgt ervoor dat het MKR board draadloos kan werken.           & https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh \\
-		Totale kost:      & \textbf{148.00}       &                                                                    &                                                                         
+	\begin{tabular}{llp{10cm}}
+		\textbf{Component}         & \textbf{Prijs (euro)} & \textbf{Doel}\\
+		\href{https://store.arduino.cc/arduino-mkr-gsm-1400-1415}{MKR GSM}           & 80.35        & Dit component runt het script en stuurt de andere componenten aan.\\
+		\href{https://store.arduino.cc/arduino-mkr-gps-shield}{MKR GPS Shield}    & 41.75        & Een meer accurate locatiebepaling in vergelijking met GPRS.\\
+		\href{https://www.kiwi-electronics.nl/lithium-ion-polymer-battery-3-7v-2500mAh}{LiPo 3.7V 2500mAh} & 25.90        & Dit zorgt ervoor dat het MKR board draadloos kan werken.\\
+		Totale kost:      & \textbf{148.00}       &                                                                         
 	\end{tabular}
-\caption{Prijs opstelling Arduino}
-\label{tab:arduino}
+	\caption{Prijs opstelling Arduino}
+	\label{tab:arduino}
 \end{table}
-
+Er kan eveneens gebruik gemaakt worden van een Arduino. Arduino is de marktleider in open source hardware en bezit over hun eigen software eco-systeem. Zo beschikken ze over hun eigen programmeertaal en code text editor. Ze brengen verschillende hardware uit op de markt die gebruikt kan worden voor 'Internet of Things'. Ze bieden een module aan die geprogrammeerd kan worden die voldoet aan alle eisen, namelijk de MKR 1400 GSM module. (Zie figuur: \ref{fig:mkr1400}) Er zijn uiteraard nog componenten nodig (zie tabel: \ref{tab:arduino}).
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mkr1400gsm.png}
     %https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA
-    \caption[Arduino MKR 1400 GSM module]{\href{https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA}{Arduino MKR 1400 GSM module \autocite{fig_MKR1400}}}
+    \caption[Arduino MKR 1400 GSM module]{\href{https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA}{Arduino MKR 1400 GSM module \autocite{fig_MKR1400}. Linksboven = Arduino MKR GSM, onderaan = GSM antenne, rechts = simkaart}}
     \label{fig:mkr1400}
 \end{figure}

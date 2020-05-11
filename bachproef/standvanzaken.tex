@@ -11,16 +11,18 @@ Het Global Positioning System is een wereldwijd gekend systeem, maar toch zijn e
 
 \subsection{\IfLanguageName{dutch}{De werking van GPS}{How GPS works}}
 \begin{figure}
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{groundstation.jpg}
-	\caption[Voorbeeld grondstation]{\href{https://www.esa.int/About_Us/ESAC/Cebreros_ground_station}{Voorbeeld grondstation \autocite{img_groundstation}}}
-	\label{fig:groundstation}
+	 \centering
+	\begin{minipage}{0.45\textwidth}
+		\includegraphics[width=200pt,height=200pt,keepaspectratio]{groundstation.jpg}
+		\caption[Voorbeeld grondstation]{\href{https://www.esa.int/About_Us/ESAC/Cebreros_ground_station}{Voorbeeld grondstation \autocite{img_groundstation}}}
+		\label{fig:groundstation}
+	\end{minipage}\hfill
+	\begin{minipage}{0.45\textwidth}
+		\includegraphics[width=200pt,height=200pt,keepaspectratio]{satelliet.jpg}
+		\caption[Voorbeeld GPS-satelliet]{\href{https://spacenews.com/40530gps-2f-6-navigation-satellite-slated-to-launch-on-may-15/}{Voorbeeld GPS-satelliet \autocite{img_satellite}}}
+		\label{fig:satelliet}
+	\end{minipage}
 \end{figure}
-\begin{figure}
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{satelliet.jpg}
-	\caption[Voorbeeld GPS-satelliet]{\href{https://spacenews.com/40530gps-2f-6-navigation-satellite-slated-to-launch-on-may-15/}{Voorbeeld GPS-satelliet \autocite{img_satellite}}}
-	\label{fig:satelliet}
-\end{figure}
-
 Het doel van een GPS is om te navigeren. Daarvoor moet de locatie heel nauwkeurig bepaald worden. Hiervoor zijn drie zaken nodig:
 \begin{itemize}
 	\item Grondstation, deze zijn ontworpen voor buitenplanetaire\footnote[1]{De ruimte buiten onze planeet} draadloze communicatie. Ze communiceren door het ontvangen en verzenden van radiogolven met zeer hoge frequentie. (Zie figuur: \ref{fig:groundstation})
@@ -38,7 +40,7 @@ Per satelliet wordt een radius bepaald. Hiervoor zijn minstens drie satellieten 
 
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{trilateratie.jpg}
-	\caption[Werking trilateratie]{\href{https://gisgeography.com/trilateration-triangulation-gps/}{Visualisatie hoe trilateratie werkt. \autocite{img_trilateratie}}}
+	\caption[Werking trilateratie]{\href{https://gisgeography.com/trilateration-triangulation-gps/}{Visualisatie hoe 4 GPS-satellieten een locatie vastleggen aan de hand van trilateratie. Het snijpunt van de 4 radiussen is de berekende locatie \autocite{img_trilateratie}}}
 	\label{fig:trilateratie}
 \end{figure} 
 \pagebreak
@@ -58,18 +60,18 @@ Naast NAVSTAR bestaat er ook:
 
 Er zijn verschillen tussen tussen deze Global Navigation Satellite Systems, namelijk de accuraatheid en het aantal satellieten. QZSS en IRNSS zijn niet ontworpen als globale GPS-systemen. (Zie tabel:\ref{tab:GNSS-vergelijking})
 \begin{table}[]
-	\begin{tabular}{lll}
+	\begin{tabular}{llp{8cm}}
 		Systeem & Aantal satellieten (actief) & Nauwkeurigheid                                                                        \\
 				BDS     & 35                          & 3.6 meter                                                                      \\
 		NAVSTAR & 31                          & 3-5 meter                                                                             \\
 		GLONASS & 24+                         & 4-10 meter                                                                            \\
 		Galileo & 24+                         & 20-50 centimeter                                                                      \\
-		IRNSS   & 7                           & \textless 10 meter over India en \textgreater{}20 meter over de Indische Oceaan regio \\
+		IRNSS   & 7                           & \textless 10 meter over India en \textgreater{}20 meter over de \newline
+		Indische Oceaan regio \\
 		QZSS    & 7                           & 1 - 0,01 meter                                                                       
 	\end{tabular}
 \label{tab:GNSS-vergelijking}
 \caption{Overzicht Global National Satellite Systems}
-\autocite{gnss}
 \end{table}
 \newline
 De reden voor het bestaan van deze verschillende systemen is van politieke aard. De EU en Rusland wilden niet afhankelijk zijn van de Verenigde Staten (NAVSTAR).
@@ -102,7 +104,7 @@ Door het beperkt aantal referentiestations kan deze methode niet geïmplementeer
 'Wide Area Augmentation' (WAAS) kan, naast basisstation op aarde (DGPS), ook GEO-satellieten gebruiken als vaste referentiepunten. Deze satellieten bevinden zich op 36.000 km hoogte boven de evenaar en draaien rond op dezelfde snelheid als de aarde. Hierdoor blijft de positie van de geosatelliet stationair ten opzichte van de aarde, waardoor het gebruikt kan worden als referentiestation.(Zie figuur: \ref{fig:geostationair})
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{geostationair.png}
-	\caption[Geostationair]{\href{https://quizlet.com/393158527/de-kosmische-ruimte-de-ruimtevaart-en-haar-toepassingen-flash-cards/}{De hoogte waarin satellieten zich moeten bevinden om geostationair te zijn \autocite{fig_geostationair}}}
+	\caption[Geostationair]{\href{https://quizlet.com/393158527/de-kosmische-ruimte-de-ruimtevaart-en-haar-toepassingen-flash-cards/}{Satellieten moeten zich op een hoogte van 36.000 km bevinden om op de geostationaire baan mee te draaien  \autocite{fig_geostationair}}}
 	\label{fig:geostationair} 
 \end{figure}
 \subsection{\IfLanguageName{dutch}{Assisted Global Positioning System (A-GPS)}{Assisted Global Positioning System (A-GPS)}}
@@ -141,12 +143,11 @@ Het gebruik van deze techniek is echter veel minder accuraat zoals weergeven op 
     \caption[Trilateratie bij GPRS]{De locatie (blauwe ster) wordt bepaald aan de hand van trilateratie met gsm-masten. De berekende schatting kan zich overal bevinden in het blauwe vlak}
     \label{fig:trilateratie_gprs}
 \end{figure}
-\pagebreak
 \raggedbottom
 \section{\IfLanguageName{dutch}{Ongunstige omstandigheden}{Unfavorable circumstances}}
 De proof of concept moet blijven functioneren in ongunstige omstandigheden, zoals sneeuw en water. Het moet in staat zijn om te functioneren als GPS-ontvanger op een surfboard en als lawinepieper. In deze sectie wordt onderzocht aan welke voorwaarden de proof of concept moet voldoen.
 \subsection{\IfLanguageName{dutch}{Water}{Water}}
-Het grootste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor het mobiele netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het aan de zijkant van een surfboard wordt gemonteerd. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren.
+Het grootste probleem voor GPS-ontvangers is dat ze niet kunnen functioneren onder water. Dit komt doordat de sterkte van het signaal te snel afneemt onder water. Hetzelfde geldt voor het mobiele netwerk, want beiden zijn elektromagnetische golven. \autocite{underwater} Er is ook een verschil tussen zout en zoetwater. Het zout in zeewater versterkt het geleidend effect waardoor GPS-signalen nog minder presteren in zeewater dan in zoetwater. Voor de proof of concept is dit geen struikelblok, indien het aan de zijkant van een surfboard wordt gemonteerd. Surfboards zijn zodanig gemaakt dat ze altijd blijven drijven, waardoor de proof of concept zal blijven functioneren naar behoren. Indien de plank gedraaid is, blijft de proof of concept werken. Dit wordt besproken in hoofdstuk~\ref{ch:resultaten}.
 \subsection{\IfLanguageName{dutch}{Sneeuw}{Snow}}
 In tegenstelling tot water, blijven GPS-signalen wel functioneren onder sneeuw tot een zekere diepte. Een GPS-signaal dat passeert door lawine puin zal onderworpen worden aan verschillende effecten zoals verzwakking, reflectie, verstrooiing, refractie, multipad en vervagen. (Zie figuur: \ref{fig:avalanche}) Sneeuw is net als water een geleidend materiaal, waardoor het (L1 band) GPS-signaal verzwakt. De verzwakking hangt af van de hoeveelheid water in de sneeuw. Een GPS-signaal kan bijvoorbeeld tot vierhonderd meter diep gaan bij sneeuw met een massadichtheid van 0.3 g/cm\textsuperscript{3}. Bij sneeuw waarbij het volumepercentage meer dan 1\% bedraagt kan het GPS-signaal slechts 3 meter diep doordringen.\autocite{avalanche_gps}
 \begin{figure}

@@ -50,9 +50,11 @@
 }
 
 @WWW{gnss,
-  author = {gps.gov},
+  author = {National Coordination Office for Space-Based Positioning, Navigation and Timing},
   editor = {gps.gov},
   title  = {Other Global Navigation Satellite Systems (GNSS)},
+  year   = {2020},
+  date   = {2020-04-22},
   url    = {https://www.gps.gov/systems/gnss/},
 }
 
@@ -192,6 +194,15 @@
   editor = {Arduino},
   title  = {ARDUINO MKR GSM 1400 CELLULAR KIT},
   url    = {https://store.arduino.cc/arduino-sim-mkr-gsm-1400-cellular-kit-1417?fbclid=IwAR0kJk6t6PVON-YakV_EiSOnb5y2RgBRQW0c6pVmpRw-hJlPRHO99qDdjSA},
+}
+
+@WWW{price_avalanche,
+  author = {Ian Nicholson, Chris McNamara},
+  editor = {outdoorgearlab},
+  title  = {The Best Avalanche Beacons},
+  year   = {2018},
+  date   = {2018-03-30},
+  url    = {https://www.outdoorgearlab.com/topics/snow-sports/best-avalanche-beacon},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}

@@ -3,9 +3,12 @@
 
 \section{\IfLanguageName{dutch}{Proof of concept}{Proof of concept}}
 \label{ch:proof-of-concept}
-
+Arduino is een bekend begrip binnen IoT. Het is hardware waar veel wordt op teruggevallen voor diverse projecten. Hierdoor kan er gebruik gemaakt worden van veel 'libraries' die ontwikkelt zijn door de grote gemeenschap die achter Arduino staat. 
+\newline
 Voor de proof of concept is de Arduino gekozen omdat dit een microcontroller is. Microcontrollers zijn zuiniger qua stroomgebruik ten opzichte van een 'computer' (Raspberry Pi). Hierdoor heeft de Arduino een langere batterijduur. Naast het verbruik is het eveneens goedkoper (zie hoofdstuk \ref{ch:stand-van-zaken}).
-
+\newline
+Naast de mogelijkheden op vlak van programmatie en performantie, is de grootte ook belangrijk. Hoe kleiner hoe beter, zodat de winter-/watersporter minder verhinderd wordt door de GPS-tracker tijdens het sporten.
+\newline
 \subsection{\IfLanguageName{dutch}{Opstelling proof of concept}{Setup proof of concept}}
 De \textbf{uitgewerkte proof of concept} (zie figuur: \ref{fig:opstelling_arduino}) bestaat uit:
 \begin{itemize}
@@ -19,7 +22,7 @@ De totale kost van de proof of concept komt neer op \textbf{148.00 euro}. Naast 
 	\item De locatie bepalen aan de hand van GPRS;
 	\item De locatie doorsturen naar een REST API aan de hand van een POST-request (JSON).
 \end{itemize}
-Het script is innovatief en staat open source op \underline{\href{https://github.com/IndyVC/bap-arduino}{een github repository}}. In het script werd gebruik gemaakt van verschillende libraries om het traceren mogelijk te maken.
+Het script is zelfontwikkeld en staat open source op \underline{\href{https://github.com/IndyVC/bap-arduino}{een github repository}}. In het script werd gebruik gemaakt van verschillende libraries om het traceren mogelijk te maken.
 Er werd gebruik gemaakt van:
 \begin{itemize}
 	\item \href{https://github.com/arduino-libraries/ArduinoHttpClient}{ArduinoHttpClient}: voor het versturen van data aan de hand van POST requests;
@@ -40,6 +43,8 @@ De proof of concept maakt gebruik van een simkaart (zie figuur: \ref{fig:simkaar
 \end{figure}
 \pagebreak
 \subsection{\IfLanguageName{dutch}{Waterdichte casing}{Waterproof casing}}
+In eerste instantie werd er niet geopteerd voor een waterdichte case te kopen, omdat dit de kost van de proof of concept onnodig verhoogt. Hierdoor werd er gekozen om zelf een waterdichte behuizing te ontwikkelen.
+\newline 
 Het maken van een waterdichte behuizing is niet eenvoudig. In de ontwikkelingsfase werden twee modellen uitgeprint en getest. Daaruit bleek dat beide modellen niet waterdicht waren. Dit komt doordat de gebruikte 3D-printer (Anycubic Predator) niet nauwkeurig genoeg is om waterdichtheid te garanderen. Bovendien beschikt het gebruikte materiaal (PLA) niet over de juiste eigenschappen. Door de coronapandemie is het praktisch niet mogelijk om een nieuwe behuizing te ontwikkelen die wel waterdicht is. Daarom is er noodgedwongen gebruik gemaakt van een aftakdoos. Deze doos is volledig waterdicht en beschikt over een grote binnenruimte. Dit wilt zeggen dat er schokdemping toegevoegd kan worden zodat de proof of concept niet beschadigd wordt. De prijs is 18,14 euro.
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{aftakdoos.jpg}
@@ -84,7 +89,7 @@ De methodiek hangt af van de beschikbaarheid van het signaal. Indien er geen GPS
 \subsection{\IfLanguageName{dutch}{Deployment}{Deployment}}
 Naast de code staat ook het programma online. De backend kan \href{https://indy-bap-backend.herokuapp.com/api/locations}{\underline{hier}} bekeken worden. Voor de deployment is er gebruik gemaakt van \href{www.heroku.com}{Heroku}. Doordat het programma online draait, kan de \href{https://indy-bap-frontend.netlify.com/}{webapplicatie} deze data ophalen en weergeven.
 \newline
-De backend maakt gebruik van een gratis hosting plan, dit kan nadelig zijn. Het programma kan na 30 minuten inactiviteit in slaapstand gaan. Dat wil zeggen dat de webapplicatie twee keer moet opgeladen worden. De eerste keer dient om de backend terug te activeren, de tweede keer om effectief te gebruiken.
+De backend maakt gebruik van een gratis hosting plan, dit kan nadelig zijn. Het programma kan na 30 minuten inactiviteit in slaapstand gaan. Dat wil zeggen dat de webapplicatie twee keer moet opgeladen worden. De eerste keer dient om de backend terug te activeren, de tweede keer om effectief te gebruiken. Het probleem wordt opgelost door de webapplicatie te refreshen.
 \pagebreak
 \section{\IfLanguageName{dutch}{Frontend}{Frontend}}
 \label{ch:frontend}
@@ -97,7 +102,7 @@ Voor de webapplicatie (zie figuur: \ref{fig:webapplicatie}) is er gebruik gemaak
 Voor de implementatie van Google Maps is er gebruik gemaakt van een open source en gratis te gebruiken library, namelijk \href{https://www.npmjs.com/package/vue2-google-maps}{vue2-google-maps}.
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{webapplicatie.png}
-	\caption{Zelf ontwikkelde webapplicatie}
+	\caption{Webapplicatie die de gebruiksvriendelijkheid van de GPS-tracker verhoogt}
 	\label{fig:webapplicatie}
 \end{figure}
 
@@ -115,7 +120,7 @@ Om de vergelijking te kunnen maken tussen de GPS in een gsm en de proof of conce
 \end{itemize}
 Voor de mobiele applicatie is er gebruik gemaakt van Vue. De code van de mobiele applicatie is open source en staat online op \underline{\href{https://github.com/IndyVC/bap-gsmtracker}{een github repository}}. 
 \begin{figure}
-	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mobile_app.jpg}
+	\includegraphics[width=200pt,height=300pt,keepaspectratio]{mobile_app.jpg}
 	\caption{Zelf ontwikkelde mobiele applicatie}
 	\label{fig:mobileapp}
 \end{figure}

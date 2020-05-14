@@ -1,7 +1,7 @@
 \chapter{\IfLanguageName{dutch}{Broncode backend}{Source code backend}}
 \label{ch:broncode_backend}
 server.js
-\begin{verbatim}
+\begin{lstlisting}
 const express = require("express");
 const dotenv = require("dotenv");
 const colors = require("colors");
@@ -35,9 +35,9 @@ console.log(
 `Server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
 )
 );
-\end{verbatim}
+\end{lstlisting}
 /controllers/locations.js
-\begin{verbatim}
+\begin{lstlisting}
 const Location = require("../models/Location");
 // @desc    Get all locations
 // @route   GET /api/locations
@@ -101,9 +101,9 @@ error: "Server error"
 });
 }
 };
-\end{verbatim}
+\end{lstlisting}
 /models/Location.js
-\begin{verbatim}
+\begin{lstlisting}
 const mongoose = require("mongoose");
 
 const LocationSchema = new mongoose.Schema({
@@ -126,9 +126,9 @@ default: Date.now
 });
 
 module.exports = mongoose.model("Location", LocationSchema);
-\end{verbatim}
+\end{lstlisting}
 /routes/locations.js
-\begin{verbatim}
+\begin{lstlisting}
 const express = require("express");
 const router = express.Router();
 const {
@@ -144,4 +144,4 @@ router
 .delete(deleteLocations);
 
 module.exports = router;
-\end{verbatim}
+\end{lstlisting}

@@ -1,7 +1,7 @@
 \chapter{\IfLanguageName{dutch}{Broncode mobiele applicatie}{Source code mobile application}}
 \label{ch:broncode_app}
 app.js
-\begin{verbatim}
+\begin{lstlisting}
 import Vue from 'nativescript-vue';
 
 import HelloWorld from './components/HelloWorld';
@@ -14,9 +14,9 @@ new Vue({
 render: h => h('frame', [h(HelloWorld)])
 
 }).$start();
-\end{verbatim}
+\end{lstlisting}
 app.scss
-\begin{verbatim}
+\begin{lstlisting}
 /*
 In NativeScript, the app.css file is where you place CSS rules that
 you would like to apply to your entire application. Check out
@@ -47,9 +47,8 @@ margin: 10;
 font-size: 20;
 margin: 20;
 }
-\end{verbatim}
-/components/HelloWorld.vue
-\begin{verbatim}
+\end{lstlisting}
+\begin{lstlisting}
 <template>
 <Page class="page">
 <ActionBar title="Geolocation" class="action-bar" />
@@ -148,4 +147,4 @@ margin: 15;
 margin-bottom: 15;
 }
 </style>
-\end{verbatim}
+\end{lstlisting}

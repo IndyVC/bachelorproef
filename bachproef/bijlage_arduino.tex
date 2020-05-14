@@ -1,6 +1,6 @@
 \chapter{\IfLanguageName{dutch}{Broncode Arduino}{Source code Arduino}}
 \label{ch:broncode_arduino}
-\begin{verbatim}
+\begin{lstlisting}
 #include <ArduinoHttpClient.h>
 #include <MKRGSM.h>
 #include <ArduinoJson.h>
@@ -127,4 +127,4 @@ void postToServer(JsonObject data) {
 	httpClient.print(dataStr);
 	httpClient.endRequest();
 }
-\end{verbatim}
+\end{lstlisting}

@@ -1,7 +1,7 @@
 \chapter{\IfLanguageName{dutch}{Broncode frontend}{Source code frontend}}
 \label{ch:broncode_frontend}
 App.vue
-\begin{verbatim}
+\begin{lstlisting}
 <template>
 <div id="app" class="tile is-ancestor">
 <Maps class="tile is-6" />
@@ -36,9 +36,9 @@ height: 100vh;
 width: 100vw;
 }
 </style>
-\end{verbatim}
+\end{lstlisting}
 main.js
-\begin{verbatim}
+\begin{lstlisting}
 import Vue from "vue";
 import App from "./App.vue";
 import store from "./store/index";
@@ -76,9 +76,9 @@ new Vue({
 store,
 render: h => h(App)
 }).$mount("#app");
-\end{verbatim}
+\end{lstlisting}
 Maps.vue
-\begin{verbatim}
+\begin{lstlisting}
 <template>
 <section class="container">
 <GmapMap
@@ -287,9 +287,9 @@ box-sizing: border-box;
 margin: 20px;
 }
 </style>
-\end{verbatim}
+\end{lstlisting}
 Controls.vue
-\begin{verbatim}
+\begin{lstlisting}
 <template>
 <section class="card">
 <div class="tab">
@@ -600,9 +600,9 @@ flex-direction: row;
 flex-wrap: wrap;
 }
 </style>
-\end{verbatim}
+\end{lstlisting}
 Vuex index.js
-\begin{verbatim}
+\begin{lstlisting}
 import Vue from "vue";
 import Vuex from "vuex";
 //modules
@@ -615,9 +615,9 @@ modules: {
 location
 }
 });
-\end{verbatim}
+\end{lstlisting}
 Vuex location.js
-\begin{verbatim}
+\begin{lstlisting}
 import axios from "axios";
 
 const state = {
@@ -696,4 +696,4 @@ getters,
 actions,
 mutations,
 };
-\end{verbatim}
+\end{lstlisting}
